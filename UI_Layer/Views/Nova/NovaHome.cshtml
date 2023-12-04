@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //Layout = "~/Views/_HomerLayout.cshtml
+    Layout = "_NovaLayout";
+}
+<div class="bg-transparent py-[60px] laptop:py-[85px]" id="about-novalin">
+    @await Component.InvokeAsync("AboutCompany")
+</div>
+<div class="space-y-4 laptop:space-y-10 bg-muted py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px]">
+    @await Component.InvokeAsync("Pannel1")
+</div>
+<div class="bg-transparent space-y-8 laptop:space-y-10 bg-muted py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px]" id="packages">
+    @await Component.InvokeAsync("Pannel2")
+</div>
+<div class="relative" id="FAQ">
+    @await Component.InvokeAsync("Pannel3")
+</div>
+<div class="space-y-8 laptop:space-y-10 bg-transparent py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px]">
+    @await Component.InvokeAsync("Pannel4")
+</div>
+<div class="space-y-6 laptop:space-y-10 bg-muted py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px]" id="how-to-pay">
+    @await Component.InvokeAsync("Pannel5")
+</div>
+<div class="bg-transparent pt-[8%] pb-[5%] space-y-10">
+    @await Component.InvokeAsync("Pannel6")
+</div>
+<div class="bg-muted py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px] space-y-8" id="news-events">
+    @await Component.InvokeAsync("Pannel7")
+</div>
+<div class="space-y-10 laptop:space-y-14 bg-[#FEF4EA] py-[60px] laptop:py-[85px] px-[20px] laptop:px-[110px] desktop:px-[150px] desktop4K:[180px]">
+    @await Component.InvokeAsync("Pannel8")
+</div>

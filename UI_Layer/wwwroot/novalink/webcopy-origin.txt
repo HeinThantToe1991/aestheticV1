@@ -1,0 +1,172 @@
+Uri: https://www.novalink.com.mm/
+File Name: D:\006Template\www.novalink.com.mm\index.htm
+Content Type: text/html
+
+Uri: https://www.novalink.com.mm/app-logo.PNG
+File Name: D:\006Template\www.novalink.com.mm\app-logo.PNG
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/manifest.json
+File Name: D:\006Template\www.novalink.com.mm\manifest.json
+Content Type: application/json
+
+Uri: https://www.novalink.com.mm/static/css/main.c15776a8.css
+File Name: D:\006Template\www.novalink.com.mm\static\css\main.c15776a8.css
+Content Type: text/css
+
+Uri: https://www.novalink.com.mm/static/js/main.73586956.js
+File Name: D:\006Template\www.novalink.com.mm\static\js\main.73586956.js
+Content Type: application/javascript
+
+Uri: https://www.novalink.com.mm/static/media/AppLogoWithBtmText.997f456382dfe650b689.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\AppLogoWithBtmText.997f456382dfe650b689.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/AppLogoWithText.c03048561ee45ff4149e49881ba36033.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\AppLogoWithText.c03048561ee45ff4149e49881ba36033.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/App_Store.40e0d42bf70144716d0da1f41ddce452.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\App_Store.40e0d42bf70144716d0da1f41ddce452.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/care.72842fa004bc8ce9d52e0d0c018299ab.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\care.72842fa004bc8ce9d52e0d0c018299ab.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/circle_check_sign.286ad9786a6b551e4b80427b36bc5ac6.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\circle_check_sign.286ad9786a6b551e4b80427b36bc5ac6.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/cross_sign.628943169708889006ba71ddb8af6ad9.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\cross_sign.628943169708889006ba71ddb8af6ad9.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Down_Arrow.56b89f7d81546d1d2d6d14b0b90fdfd4.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\Down_Arrow.56b89f7d81546d1d2d6d14b0b90fdfd4.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/fast_&_easy.21cacfdc5b1f696a0db78b746bf32b0b.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\fast_&_easy.21cacfdc5b1f696a0db78b746bf32b0b.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Girl.77754a8ef15cbf74965d.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Girl.77754a8ef15cbf74965d.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/high-speed-1.0f51f7005f31140a3b3d.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\high-speed-1.0f51f7005f31140a3b3d.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/high-speed-2.eb361a3697ba0e04e20f.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\high-speed-2.eb361a3697ba0e04e20f.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Home internet images_01.aaf4c3b6b57017d4c806.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Home internet images_01.aaf4c3b6b57017d4c806.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Home internet images_02.e6ea774392ba731dafeb.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Home internet images_02.e6ea774392ba731dafeb.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/next.d7680153f163320aae3583bba9477847.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\next.d7680153f163320aae3583bba9477847.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Play_Store.cd9cc82f8264d897fafd0e93260a8295.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\Play_Store.cd9cc82f8264d897fafd0e93260a8295.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Promo1.e3e2a8600dc04577693d.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Promo1.e3e2a8600dc04577693d.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Promo2.799b332b2d94feae9c6e.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Promo2.799b332b2d94feae9c6e.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Promo3.e163298762eb63063c4f.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Promo3.e163298762eb63063c4f.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Raleway-Regular.3927fa2a37e6f7f4c7c0.ttf
+File Name: D:\006Template\www.novalink.com.mm\static\media\Raleway-Regular.3927fa2a37e6f7f4c7c0.ttf
+Content Type: application/octet-stream
+
+Uri: https://www.novalink.com.mm/static/media/reliable.b7584dd98fa4a0a092468e75637a76c2.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\reliable.b7584dd98fa4a0a092468e75637a76c2.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Sale-Point-1.735d5c2e11d94971e909.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Sale-Point-1.735d5c2e11d94971e909.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Sale-Point-2.f7bfb5c89c537c4e57bc.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Sale-Point-2.f7bfb5c89c537c4e57bc.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/secure.6ea0ef01ccbafbe092608ef53ff4e592.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\secure.6ea0ef01ccbafbe092608ef53ff4e592.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Slideshow_01.19af7bd67c6d1bd096a5.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Slideshow_01.19af7bd67c6d1bd096a5.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Slideshow_03.b91c6b95a31e9c5f57c2.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Slideshow_03.b91c6b95a31e9c5f57c2.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Slideshow_04.b4a4aa22d642116cc5f7.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Slideshow_04.b4a4aa22d642116cc5f7.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/Slideshow_05.5c1c4f0c16daa958180d.png
+File Name: D:\006Template\www.novalink.com.mm\static\media\Slideshow_05.5c1c4f0c16daa958180d.png
+Content Type: image/png
+
+Uri: https://www.novalink.com.mm/static/media/star.0ea84e72bd9414a3a049ff583c4451a1.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\star.0ea84e72bd9414a3a049ff583c4451a1.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorEmail_Black.107d4c9f4e2bcb291cbc07a59afee733.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorEmail_Black.107d4c9f4e2bcb291cbc07a59afee733.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorFacebook.40f53ba21128c9c92275404f495ba460.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorFacebook.40f53ba21128c9c92275404f495ba460.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorFacebook_Black.51f555ca18bde1c4a12f1bb95795a600.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorFacebook_Black.51f555ca18bde1c4a12f1bb95795a600.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorLinkin.0dc41fdd3cfcbbe81ed591f09b838393.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorLinkin.0dc41fdd3cfcbbe81ed591f09b838393.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorLinkin_Black.fd0be854e3cb42e4ea43fd8de6a2612c.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorLinkin_Black.fd0be854e3cb42e4ea43fd8de6a2612c.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorPhone_Black.4270abe9afdf52df74548eac1f924590.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorPhone_Black.4270abe9afdf52df74548eac1f924590.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorTelegram_Black.3d1aca418e32148a952b23db02a95438.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorTelegram_Black.3d1aca418e32148a952b23db02a95438.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/VectorTelegram_White.4f65fcbf52725e1200b4946ddf0d958a.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\VectorTelegram_White.4f65fcbf52725e1200b4946ddf0d958a.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Vertical_Down.51202d8e04e69f6fae365e88c9478037.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\Vertical_Down.51202d8e04e69f6fae365e88c9478037.svg
+Content Type: image/svg+xml
+
+Uri: https://www.novalink.com.mm/static/media/Vertical_Up.4f252cdddc37947e72de7c256b1876af.svg
+File Name: D:\006Template\www.novalink.com.mm\static\media\Vertical_Up.4f252cdddc37947e72de7c256b1876af.svg
+Content Type: image/svg+xml
+

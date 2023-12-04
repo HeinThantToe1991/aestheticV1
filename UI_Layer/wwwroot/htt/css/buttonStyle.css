@@ -1,0 +1,240 @@
+﻿.Button25Per {
+    width: 25%;
+}
+.Button50Per {
+    width: 50%;
+}
+.Button75Per {
+    width: 75%;
+}
+.Button100per {
+    width:100%;
+}
+
+
+.Button100Px {
+  /*  padding: 5px 5px;
+    font-size: 12px;*/
+    min-width: 100px;
+}
+
+.btn {
+    /*  padding: 5px 5px;
+    font-size: 12px;*/
+    min-width: 70px;
+}
+.btn-outline-secondary {
+    min-width: 70px;
+    color: #6c757d;
+    border: 1px solid;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*#region form-group + control-label Display Label when Focus on control*/
+.form-group {
+    margin-bottom: 20px;
+    padding: 4px 0;
+    position: relative;
+}
+.form-control {
+    background-color: white;
+    -webkit-appearance: none;
+    border: 1px solid #cccccc;
+    margin-bottom: 8px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+.control-label {
+    position: absolute;
+    opacity: 0;
+    transition: .2s bottom, .2s opacity;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.form-control:focus + .control-label, .form-control:invalid + .control-label {
+    bottom: 86%;
+    line-height: 1;
+    opacity: 1;
+    padding: 4px;
+}
+.form-control:invalid {
+    border-left: 10px solid #f00;
+}
+.form-control:invalid + .control-label::after {
+    color: #f00;
+    content: "*";
+    font-size: 14px;
+    line-height: 1;
+    padding-left: 12px;
+}
+/*#endregion*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /*#region datatable button*/
+    .buttons-html5 {
+        width: 10px
+    }
+
+        .buttons-html5 span {
+            font-size: 15px
+        }
+
+    .buttons-print {
+        width: 10px
+    }
+
+    .buttons-print span {
+        font-size: 15px
+    }
+
+    .buttons-colvis {
+        width: 20%
+    }
+
+    .buttons-colvis span {
+        font-size: 15px
+    }
+    /*#endregion*/
+}
+@media only screen and (max-width: 481px) {
+    /*#region datatable button*/
+    .buttons-html5 {
+        width: 10px
+    }
+
+    .buttons-html5 span {
+        font-size: 15px
+    }
+
+    .buttons-print {
+        width: 10px
+    }
+
+    .buttons-print span {
+        font-size: 15px
+    }
+
+    .buttons-colvis {
+        width: 20%
+    }
+
+    .buttons-colvis span {
+        font-size: 15px
+    }
+    /*#endregion*/
+    .btn {
+        min-width: 20%;
+    }
+
+    .btn-outline-primary span {
+        display: none;
+    }
+
+    .btn-outline-warning span {
+        display: none;
+    }
+
+    .btn-outline-info span {
+        display: none;
+    }
+
+    .btn-outline-danger span {
+        display: none;
+    }
+
+    .btn-outline-secondary {
+        min-width: 20%;
+        color: #6c757d;
+        border: 1px solid;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .btn-outline-info {
+        min-width: 20%;
+        /*color: #6c757d;*/
+        border: 1px solid;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+
+    /* button  Styles   Focus,Hover   AMZ*/
+    /*Succes*/
+    /*.btn-success:focus {
+    background-color: white;
+    border-color: #00a65a;
+    color: #00a65a;
+    font-size: 13px;
+}
+.btn-success:hover {
+    background-color: white;
+    border-color: #00a65a;
+    color: #00a65a;
+    font-size: 13px;
+}
+
+.btn-info:focus {
+    background-color: white;
+    border-color: #00c0ef;
+    color: #00c0ef;
+    font-size: 13px;
+}
+
+.btn-info:hover {
+    background-color: white;
+    border-color: #00c0ef;
+    color: #00c0ef;
+    font-size: 13px;
+}
+
+.btn-primary:focus {
+    background-color: white;
+    border-color: #3c8dbc;
+    color: #3c8dbc;
+    font-size: 13px;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: #3c8dbc;
+    color: #3c8dbc;
+    font-size: 13px;
+}
+
+.btn-warning:focus {
+    background-color: white;
+    border-color: #f39c12;
+    color: #f39c12;
+    font-size: 13px;
+}
+
+.btn-warning:hover {
+    background-color: white;
+    border-color: #f39c12;
+    color: #f39c12;
+    font-size: 13px;
+}
+
+.btn-danger:focus {
+    background-color: white;
+    border-color: #dd4b39;
+    color: #dd4b39;
+    font-size: 13px;
+}
+
+.btn-danger:hover {
+    background-color: white;
+    border-color: #dd4b39;
+    color: #dd4b39;
+    font-size: 13px;
+}
+
+*/

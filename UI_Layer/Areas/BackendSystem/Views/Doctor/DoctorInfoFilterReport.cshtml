@@ -1,0 +1,140 @@
+﻿@using UI_Layer.Services
+@inject LanguageService Language
+@model UI_Layer.Areas.BackendSystem.Models.CustomerViewModel
+@{
+    ViewData["Title"] = "Doctor Information Report";
+    Layout = "/Views/Shared/_AdminLteLayout.cshtml";
+}
+<style>
+    .dataTables_wrapper {
+        display: block;
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctor Information Print</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="invoice" id="divInvoice">
+            <link rel="stylesheet" href="~/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+            <link rel="stylesheet" href="~/AdminLTE/dist/css/adminlte.min.css">
+            <style>
+                @@page {
+                    /*   size: ;*/
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                }
+            </style>
+            <div id="divExcel">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="~/images/@ViewBag.Company.CompanyLogo" alt="" width="100">
+                    </div>
+                    <div class="col-sm-4">
+                        <h2 style="text-align:center">
+                            @ViewBag.Company.CompanyName
+
+                        </h2>
+                        <address style="text-align:center">
+                            @ViewBag.Company.CompanyAddress<br>
+                            @Language.Getkey("ML00012") : @ViewBag.Company.PhoneNumber<br>
+                            @Language.Getkey("ML00141") :  @ViewBag.Company.Email
+                        </address>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+                <!-- title row -->
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="page-header">
+                            @Language.Getkey("Doctor Information Report")
+                        </h4>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- info row -->
+
+                <hr />
+                <div class="col-sm-12">
+                    <div class="row invoice-info">
+                        <div class="col-sm-8 invoice-col">
+                            <address>
+                                @Language.Getkey("ML00120")     : @*@ViewBag.Customer*@<br>
+                                @Language.Getkey("ML00066")     :  @* @ViewBag.Date*@<br>
+                            </address>
+                        </div>
+                        <div class="col-sm-4 invoice-col">
+                            <strong>@Language.Getkey("ML00190")       :   @ViewBag.PrintDate</strong><br />
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- Table row -->
+                <div class="row">
+                    <div class="col-12 table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>@Language.Getkey("ML00068")</th>
+                                    <th>@Language.Getkey("ML00186")</th>
+                                    <th>@Language.Getkey("ML00120")</th>
+                                    <th>@Language.Getkey("ML00051")</th>
+                                    @*<th>@language.Getkey("ML00186")</th>*@
+                                    <th>@Language.Getkey("ML00012")</th>
+                                    <th>@Language.Getkey("ML00141")</th>
+                                    <th>@Language.Getkey("ML00048")</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    var srNo = 1;
+                                    foreach (var item in ViewBag.List)
+                                    {
+                                        <tr>
+                                            <td>@srNo</td>
+                                            <td>@item.DateOfBirth</td>
+                                            <td>@item.FullName</td>
+                                            <td>@item.Gender</td>
+                                            @*<td>@item.dateOfBirth</td>*@
+                                            <td>@item.PhoneNo</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Address</td>
+                                        </tr>
+                                        srNo++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+
+            <!-- /.row -->
+        </section>
+        <input type="button" id="btnExport" class="btn btn-secondary" value="@Language.Getkey("MB00031")">
+        <input type="button" id="btnPDF" class="btn btn-secondary" value="@Language.Getkey("MB00007")">
+    </div>
+    <script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>
+    <script>
+        $("#btnExport").click(function (e) {
+            var file = new Blob([$('#divExcel').html()], { type: "application/vnd.ms-excel" });
+            var url = URL.createObjectURL(file);
+            var a = $("<a />", {
+                href: url,
+                download: "DoctorInformationReport.xls"
+            }).appendTo("body").get(0).click();
+            e.preventDefault();
+        });
+        $("#btnPDF").click(function (e) {
+            var divContents = document.getElementById("divInvoice").innerHTML;
+            var a = window.open('', '', 'height=1000, width=1000');
+            a.document.write(divContents);
+            a.document.close();
+            a.print();
+        });
+    </script>
+</body>

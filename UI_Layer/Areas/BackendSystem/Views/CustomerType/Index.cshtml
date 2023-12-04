@@ -1,0 +1,184 @@
+﻿@using UI_Layer.Services
+@inject LanguageService Language
+@model UI_Layer.Areas.BackendSystem.Models.CustomerTypeViewModel
+@{
+    ViewData["Title"] = "Customer Type";
+    Layout = "/Views/Shared/_AdminLteLayout.cshtml";
+}
+<link rel="stylesheet" href="~/AdminLTE/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="~/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Customer Type</h3>
+                <a href="#addModal" class="btn btn-success Button100Px" data-toggle="modal" style="margin-top: -5px;margin-bottom: -5px;margin-left: 10px;"><i class="fa fa-plus"></i> @Language.Getkey("MB00008")</a>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body scrollable-div">
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">@Language.Getkey("ML00057")</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <table id="listing" class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>@Language.Getkey("ML00001")</th>
+                                                    <th>@Language.Getkey("ML00002")</th>
+                                                    <th style="width:30%">@Language.Getkey("ML00004")</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("Add", "CustomerType", FormMethod.Post, new { onsubmit = "return Add(this)", id = "quickForm", novalidate = "novalidate" }))
+{
+    <div id="addModal" class="modal fade" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header alert alert-success">
+                        <h4 class="modal-title" id="myModalLabel">@Language.Getkey("MB00008")</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <div class="form-group">
+                                   <div class="form-group-sm">
+                                        @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @placeholder = @Language.Getkey("ML00001"), @style = "text-transform:uppercase" })
+                                        @Html.LabelFor(model => model.Code, @Language.Getkey("ML00001"), new { @class = "control-label" })
+                                        @Html.ValidationMessageFor(model => model.Code)
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @placeholder = @Language.Getkey("ML00002") })
+                                    @Html.LabelFor(model => model.Description, @Language.Getkey("ML00002"), new { @class = "control-label" })
+                                    @Html.ValidationMessageFor(model => model.Description)
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success submit" value="@Language.Getkey("MB00001")">
+                        <input type="button" class="btn btn-secondary" onclick="clearAddForm()" data-dismiss="modal" value="@Language.Getkey("MB00003")">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("Update", "CustomerType", FormMethod.Post, new { onsubmit = "return Update(this)", id = "editForm" }))
+{
+    <div id="updateModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header alert-warning">
+
+                        <h4 class="modal-title" id="myModalLabel">@Language.Getkey("MB00005")</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @id = "EditID" } })
+                                    @Html.ValidationMessageFor(model => model.Id)
+                                </div>
+                                <div class="form-group ">
+                                    @Html.TextBoxFor(model => model.Code, new { id = "EditCode", @class = "form-control", @readonly = "", @placeholder = @Language.Getkey("ML00001") })
+                                    @Html.ValidationMessageFor(model => model.Code)
+                                </div>
+                                <div class="form-group ">
+                                    @Html.TextAreaFor(model => model.Description, new { id = "EditDescription", @class = "form-control", @placeholder = @Language.Getkey("ML00002") })
+                                    @Html.ValidationMessageFor(model => model.Description)
+                                </div>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-warning submit" value=" @Language.Getkey("MB00002")">
+                        <input type="button" class="btn btn-secondary " data-dismiss="modal" value="@Language.Getkey("MB00003")">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("Delete", "CustomerType", FormMethod.Post, new { onsubmit = "return Delete(this)" }))
+{
+    <div id="DeleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header alert alert-danger">
+                    <h4 class="modal-title" id="myModalLabel">@Language.Getkey("MB00004")</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>@Language.Getkey("MC00001")</h3>
+                    <div class="form-group" style="display:none">
+                        @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @id = "txtDeleteCodeId" } })
+                        @Html.ValidationMessageFor(model => model.Id)
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="btnDelete" class="btn btn-danger submit" value="@Language.Getkey("MB00004")">
+                    <input type="button" class="btn btn-secondary " data-dismiss="modal" value="@Language.Getkey("MB00003")">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<script src="~/AdminLTE/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="~/AdminLTE/plugins/select2/js/select2.full.min.js"></script>
+@*<script src="~/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>*@
+<script src="~/htt/customertype.js"></script>
+<script>
+    var MB00005 = "@Language.Getkey("MB00005")";
+    var MB00004 = "@Language.Getkey("MB00004")";
+    var MV00018 = "@Language.Getkey("MV00018")";
+    var MV00073 = "@Language.Getkey("MV00073")";
+    var MV00017 = "@Language.Getkey("MV00017")";
+    var MV00074 = "@Language.Getkey("MV00074")";
+    var ReloadLink = "@Url.Action("ReloadData", "CustomerType", new { Area = "BackendSystem" })";
+   
+</script>

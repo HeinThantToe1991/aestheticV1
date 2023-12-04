@@ -1,0 +1,86 @@
+﻿@model UI_Layer.Areas.BackendSystem.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "/Views/Shared/_BackendLoginLayout.cshtml";
+
+}
+<div class="heading mb-4">
+    <h4>Registration</h4>
+</div>
+@using (Html.BeginForm("Register", "Account", new { area = "BackendSystem" }, FormMethod.Post, null, new { @class = "form-horizontal", role = "form", id = "quickForm", novalidate = "novalidate", enctype = "multipart/form-data", @style = "width:100%" }))
+    {
+    <div class="form-input">
+        <span><i class="fa fa-user"></i></span>
+        @Html.TextBoxFor(m => m.FullName, new { @placeholder = "Full Name" ,@required =""})
+    </div>
+        <div class="form-input">
+        <span><i class="fa fa-user"></i></span>
+        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "User Name",@required ="" })
+        @*@Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })*@
+    </div>
+    <div class="form-input">
+        <span><i class="fa fa-envelope"></i></span>
+        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address",@required ="" })
+        @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })*@
+    </div>
+    <div class="form-input">
+        <span><i class="fa fa-lock"></i></span>
+        @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" ,@required =""})
+        @*@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })*@
+    </div>
+    <div class="form-input">
+        <span><i class="fa fa-lock"></i></span>
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password",@required ="" })
+        @*@Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })*@
+    </div>
+    @*<div class="row mb-3">
+        <div class="col-12 d-flex">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1">
+                <label class="custom-control-label text-white" for="cb1">I agree all terms & conditions</label>
+            </div>
+        </div>
+    </div>*@
+       
+        <div class="text-center mb-3">
+            <button type="submit" class="btn" style="width: 100%">Register</button>
+        </div>
+     
+        <div style="color: #777">
+            If you already have an account, please
+            <a class="register-link" href='@Url.Action("Login", "Account", new { area = "BackendSystem" })'>
+                log in
+            </a>
+        </div>
+
+     
+        
+}
+
+@*<script src="~/~/AdminLTE/plugins/jquery/jquery.min.js"></script>*@
+@*<script src="~/BackendLogIn/jquery-3.3.1.slim.min.js"></script>*@
+<!-- Add the Bootstrap JavaScript -->
+
+<script>
+    $(document).ready(function () {
+        $("#quickForm").submit(function (event) {
+            event.preventDefault();
+      
+            var formData = $("#quickForm").serialize();
+            $.ajax({
+                type: "POST",
+                url: "/BackendSystem/Account/Register", 
+                data: formData,
+                success: function (data) {
+                    //debugger;
+                    PopupMessage(data.messageStatus, data.message);
+                },
+                error: function (error) {
+                    // Handle the error response
+                    // For example, display an error message
+                    console.error("Registration failed: " + error.responseText);
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\bin\Debug\netcoreapp2.0\FileSystem.Core.deps.json
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\bin\Debug\netcoreapp2.0\FileSystem.Core.dll
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\bin\Debug\netcoreapp2.0\FileSystem.Core.pdb
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.csproj.AssemblyReference.cache
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.AssemblyInfoInputs.cache
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.AssemblyInfo.cs
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.csproj.CoreCompileInputs.cache
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.dll
+C:\HTT\005LearningProject\HTTProject\Core7MVC\GeneralProject\FileSystem.Core\obj\Debug\netcoreapp2.0\FileSystem.Core.pdb

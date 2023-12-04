@@ -1,0 +1,205 @@
+﻿@using UI_Layer.Services
+@inject LanguageService Language
+@model UI_Layer.Areas.BackendSystem.Models.CompanyInformationViewModel
+@{
+    ViewData["Title"] = "Admin Home";
+    Layout = "/Views/Shared/_AdminLteLayout.cshtml";
+}
+<style>
+    .scrollable-div {
+        max-height: 60vh; /* Set the maximum height for the div */
+        overflow-y: auto; /* Add vertical scrollbar if content overflows */
+        border: 1px solid #ccc; /* Optional: Add a border for styling */
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Company Information</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body scrollable-div">
+
+                @using (Html.BeginForm("SaveData", "CompanyInformation", FormMethod.Post, new { onsubmit = "return Add(this, event)", id = "quickForm", novalidate = "novalidate", enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control", @id = "txtCompanyName", @placeholder = "Company Name" })
+                                @Html.LabelFor(model => model.CompanyName, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.CompanyName)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.CompanyShortName, new { @class = "form-control", @id = "txtCompanyShortName", @placeholder = "Short Name" })
+                                @Html.LabelFor(model => model.CompanyShortName, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.CompanyShortName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.RefCompanyId, new { @class = "form-control", @id = "txtRefCompanyId", @placeholder = "Reference Id" })
+                                @Html.LabelFor(model => model.RefCompanyId, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.RefCompanyId)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    @Html.TextBoxFor(model => model.CompanyLogo, new { @class = "custom-file-input", id = "imgfile", Type = "file", onchange = "loadFile(event)" })
+                                    <label class="custom-file-label" for="CompanyLogo" id="customfile">Choose logo</label>
+                                    @Html.ValidationMessageFor(model => model.CompanyLogo)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group text-center">
+                                <div class="custom-file">
+                                    <hr/>
+                                    <img id="output" width="200" src="/images/atom.PNG" name="CompanyLogo" style="vertical-align: inherit;max-width:20vh;max-height:20vh" />
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "txtEmail", @placeholder = "Email" })
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", @id = "txtAddPhoneNumber", @placeholder = "Phone Number" })
+                                @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.ContactPerson, new { @class = "form-control", @id = "txtContactPerson", @placeholder = "Contact Person" })
+                                @Html.LabelFor(model => model.ContactPerson, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.ContactPerson)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.StateDivision, new { @class = "form-control", @id = "txtStateDivision", @placeholder = "State Division" })
+                                @Html.LabelFor(model => model.StateDivision, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.StateDivision)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.District, new { @class = "form-control", @id = "txtDistrict", @placeholder = "District" })
+                                @Html.LabelFor(model => model.District, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.District)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.Township, new { @class = "form-control", @id = "txtTownship", @placeholder = "Township" })
+                                @Html.LabelFor(model => model.Township, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Township)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.StreetNumber_Name, new { @class = "form-control", @id = "txtStreetNumber_Name", @placeholder = "Street Name" })
+                                @Html.LabelFor(model => model.StreetNumber_Name, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.StreetNumber_Name)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.CompanyAddress, new { @class = "form-control", @id = "txtCompanyAddress", @placeholder = "Company Address" })
+                                @Html.LabelFor(model => model.CompanyAddress, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.CompanyAddress)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.BusinessType, new { @class = "form-control", @id = "txtBusinessType", @placeholder = "Business Type" })
+                                @Html.LabelFor(model => model.BusinessType, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.BusinessType)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.WebsiteLink, new { @class = "form-control", @id = "txtWebsiteLink", @placeholder = "Website Link" })
+                                @Html.LabelFor(model => model.WebsiteLink, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.WebsiteLink)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.FacebookLink, new { @class = "form-control", @id = "txtFacebookLink", @placeholder = "FacebookLink" })
+                                @Html.LabelFor(model => model.FacebookLink, new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.FacebookLink)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" id="btnSave" class="btn btn-success Button100Px">
+                                <i class="fa fa-save"></i>
+                                <span>@Language.Getkey("MB00001")</span>
+                            </button>
+
+                            <button type="submit" id="btnUpdate" class="btn btn-warning Button100Px">
+                                <i class="fa fa-save"></i>
+                                <span>@Language.Getkey("MB00002")</span>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @*<a href="#addModal" class="btn btn-success Button100Px" data-toggle="modal"><i class="fa fa-plus"></i> @Language.Getkey("MB00008")</a>*@
+    @*<a id='btnEdit' value='@Language.Getkey("MB00005")' class='btn  btn-outline-warning btn-sm' data-id='" + data.ID + "' onclick=EditPopup()><i class='fas fa-pencil-alt'></i><span>@Language.Getkey("MB00005")</span></a>*@
+    @*<a href="#viewModal" class="btn btn-success Button100Px" data-toggle="modal"><i class="fa fa-plus"></i> @Language.Getkey("MB00008")</a>*@
+</div>
+
+<script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<script src="~/AdminLTE/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="~/htt/companyinformation.js"></script>
+ 
+<script>
+    var MV00077 = "@Language.Getkey("MV00077")";
+    var MV00082 = "@Language.Getkey("MV00082")";
+    var MV00083 = "@Language.Getkey("MV00083")";
+    var MV00091 = "@Language.Getkey("MV00091")";
+    var MV00080 = "@Language.Getkey("MV00080")";
+    var MV10086 = "@Language.Getkey("MV00086")";
+    var MV10087 = "@Language.Getkey("MV00087")";
+    var MV10088 = "@Language.Getkey("MV00088")";
+</script>

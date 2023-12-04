@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\HTT\\005LearningProject\\HTTProject\\Core7MVC\\GeneralProject\\FileSystem.Core\\FileSystem.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\HTT\\005LearningProject\\HTTProject\\Core7MVC\\GeneralProject\\FileSystem.Core\\FileSystem.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\HTT\\005LearningProject\\HTTProject\\Core7MVC\\GeneralProject\\FileSystem.Core\\FileSystem.Core.csproj",
+        "projectName": "FileSystem.Core",
+        "projectPath": "C:\\HTT\\005LearningProject\\HTTProject\\Core7MVC\\GeneralProject\\FileSystem.Core\\FileSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\HTT\\.nuget\\packages\\",
+        "outputPath": "C:\\HTT\\005LearningProject\\HTTProject\\Core7MVC\\GeneralProject\\FileSystem.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HTT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://10.20.151.51/guestAuth/app/nuget/v1/FeedService.svc/": {},
+          "http://10.20.151.62/guestAuth/app/nuget/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "targetAlias": "netcoreapp2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "targetAlias": "netcoreapp2.0",
+          "dependencies": {
+            "FluentFTP": {
+              "target": "Package",
+              "version": "[19.2.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2016.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.311\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

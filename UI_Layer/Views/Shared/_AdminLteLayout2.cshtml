@@ -1,0 +1,696 @@
+﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@using UI_Layer.Data.IdentityModel
+@using UI_Layer.Services
+
+
+@inject LanguageService language
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="Title">@ViewBag.Title </title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />*@
+
+    @*ADMIN*@
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="icon" type="image/png" href="/image/ACELogo.png" sizes="192x192">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/jqvmap/jqvmap.min.css">
+
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/summernote/summernote-bs4.min.css">
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/toastr/toastr.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/~/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="~/~/AdminLTE/dist/css/adminlte.min.css">
+    <link href="~/css/NumberStyle.css" rel="stylesheet" />
+    <link href="~/WebContent/styles/buttonStyle.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+        #preloder {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            background: #0000001a;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-whitAe navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                @*<li class="nav-item d-none d-sm-inline-block">
+                <a href="~/Admin/index3.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                <a href="~/Ecommerce/Home/Index" class="nav-link">Ecommerce</a>
+                </li>*@
+
+            </ul>
+
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var userInfo = UserManager.GetUserAsync(User);
+
+                    <!-- User Dropdown Menu -->
+                    <li class="nav-item dropdown user-menu">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            @*<img src="../../dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">*@
+                            <span  class="">Hello !  @userInfo.Result.FullName</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <!-- User image -->
+                            <li class="user-header bg-primary">
+                                <img id="userProfile" class="img-circle elevation-2" style="width:120px;height:120px" name="UserProfile" />
+                                <p>
+                                    @userInfo.Result.FullName
+                                </p>
+                            </li>
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6" style="width:50%">
+                                        <button type="button" onclick="EditCurrentUser()" id="btnEditUser" class="btn btn-outline-info btn-flat">Edit Profile</button> @**@
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6" style="width:50%">
+                                        <form class="form-inline float-sm-right" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Login", "Account", new { area = "BackendSystem" })">
+                                            <button type="submit" class="btn  btn-outline-secondary btn-flat float-right"><i class="far fa-bell"></i> Logout</button>  @**@
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                }
+
+
+
+                <!-- Language Dropdown Menu -->
+                <li class="nav-item dropdown">
+
+                    <select class="form-control" id="selLanguage">
+                        <option value="en">Myanmar</option>
+                        <option value="es">English</option>
+
+                    </select>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="~/AdminModule/Dashboard/Index" class="brand-link">
+                <img src="~/Admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span id="MenuCompany" class="brand-text font-weight-light"></span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <hr />
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" id="menuLayout">
+
+                        @*@await Component.InvokeAsync("Menus", Model);*@
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        @*body*@
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            @*   <h1 class="m-0">Dashboard</h1>*@
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right" id="olCaption">
+                                @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>*@
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <main role="main" class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </main>
+
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2022 <a href="https://acedatasystems.com/">ACE Data Systems Ltd</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1
+            </div>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+    </div>
+
+    <input type="hidden" id="MV00079" name="Please Choose One." value='@language.Getkey("MV00079")' />
+    <input type="hidden" id="MV00089" name="This field is required." value='@language.Getkey("MV00089")' />
+    <input type="hidden" id="ML00114" name="UM" value='@language.Getkey("ML00114")' />
+    <input type="hidden" id="ML00109" name="Stock" value='@language.Getkey("ML00109")' />
+    <input type="hidden" id="ML00110" name="Category" value='@language.Getkey("ML00110")' />
+    <input type="hidden" id="ML00111" name="Group" value='@language.Getkey("ML00111")' />
+    <input type="hidden" id="ML00112" name="Class" value='@language.Getkey("ML00112")' />
+    <input type="hidden" id="ML00150" name="Location" value='@language.Getkey("ML00150")' />
+    <input type="hidden" id="ML10194" name="From Customer" value='@language.Getkey("ML10194")' />
+    <input type="hidden" id="ML10195" name="To Customer" value='@language.Getkey("ML10195")' />
+    <input type="hidden" id="ML00022" name="From Invoice" value='@language.Getkey("ML00022")' />
+    <input type="hidden" id="ML00023" name="To Invoice" value='@language.Getkey("ML00023")' />
+    <input type="hidden" id="ML00038" name="Package Type" value='@language.Getkey("ML00038")' />
+    <input type="hidden" id="ML00049" name="State Division" value='@language.Getkey("ML00049")' />
+    <input type="hidden" id="ML00050" name="District" value='@language.Getkey("ML00050")' />
+    <input type="hidden" id="ML00048" name="Township" value='@language.Getkey("ML00048")' />
+    <input type="hidden" id="MB00001" name="Save" value='@language.Getkey("MB00001")' />
+    <input type="hidden" id="MB00002" name="Update" value='@language.Getkey("MB00002")' />
+    <input type="hidden" id="ML00076" name="PaymentMethod" value='@language.Getkey("ML00076")' />
+    <input type="hidden" id="ML00201" name="From Delivery Man" value='@language.Getkey("ML00201")' />
+    <input type="hidden" id="ML00202" name="To Delivery Man" value='@language.Getkey("ML00202")' />
+    <input type="hidden" id="MV00086" name="Invalid image name, Please change image name!" value='@language.Getkey("MV00086")' />
+    <input type="hidden" id="MV00087" name="Maximum image name length is 50!" value='@language.Getkey("MV00087")' />
+    <input type="hidden" id="MV00088" name="Invalid image size, Please reduce image size!" value='@language.Getkey("MV00088")' />
+    <input type="hidden" id="MB00002" name="Update" value='@language.Getkey("MB00002")' />
+    <input type="hidden" id="MB00001" name="Save" value='@language.Getkey("MB00001")' />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*<script src="~/Admin/plugins/jquery/jquery.min.js"></script>*@
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/~/AdminLTE/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/~/AdminLTE/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="~/~/AdminLTE/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="~/~/AdminLTE/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="~/~/AdminLTE/plugins/moment/moment.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/~/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/~/AdminLTE/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/~/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTELTE App -->
+    <script src="~/~/AdminLTE/dist/js/AdminLTElte.js"></script>
+    <!-- AdminLTELTE for demo purposes -->
+    <script src="~/~/AdminLTE/dist/js/demo.js"></script>
+    <!-- AdminLTELTE dashboard demo (This is only for demo purposes) -->
+    @*<script src="~/~/AdminLTE/dist/js/pages/dashboard.js"></script>*@
+
+
+    @*****AdminLTE*@
+    <!-- DataTables  & Plugins -->
+
+    <script src="~/~/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/jszip/jszip.min.js"></script>
+    @*export pdf myanmar font*@
+    <script src="~/~/AdminLTE/plugins/pdfmake/pdfmake.js"></script>
+    <script type="text/javascript" src="~/~/AdminLTE/plugins/pdfmake/vfs_fonts.js"></script>
+    @*End export pdf myanmar font*@
+    <script src="~/~/AdminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
+    <script src="~/~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @*jquery-validation*@
+    <script src="~/~/AdminLTE/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/~/AdminLTE/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    @*bs-custom-file-input*@
+    <script src="~/~/AdminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    @*Toastr*@
+    <script src="~/~/AdminLTE/plugins/toastr/toastr.min.js"></script>
+    @*Select2*@
+
+    <script src="~/~/AdminLTE/plugins/select2/js/select2.min.js"></script>
+
+    <script src="~/js/autoNumeric/autoNumeric.js"></script>
+    <script src="~/js/numeral/numeral.js"></script>
+    <script src="~/js/NumberFormat.js"></script>
+
+    <script src="~/~/AdminLTE/plugins/select2/js/select2.js"></script>
+    <script src="~/WebContent/scripts/Globalizer.js"></script>
+    <script src="~/js/GlobalFunction.js"></script>
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+
+    @*<script src="~/~/AdminLTE/plugins/jquery/jquery.min.js"></script>*@
+    @*<script src="~/Ecommerce/js/main.js"></script>*@
+    <!-- Load the JS SDK asynchronously -->
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>*@
+
+
+    @RenderSection("Scripts", required: false)
+
+    <script>
+
+        var accessToken = "";
+        var pageId = "";
+        var pageName = "";
+        // MH Monywa    751538955696211
+        // TestFBApp    441295093496757
+        // GraphAPI     361008505098178
+        var appId = "751538955696211";
+
+        $(window).on('load', function () {
+            var url = window.location;
+            if (url.href.slice(-4) === "#_=_") {
+                url.href = url.href.substring(0, url.href.length - 4);
+            }
+            if (url.href.slice(-1) === "#") {
+                url.href = url.href.substring(0, url.href.length - 1);
+            }
+            // for sidebar menu entirely but not cover treeview
+            $('ul.nav-sidebar a').filter(function () {
+                if (this.href) {
+                    return this.href == url || url.href.indexOf(this.href) == 0;
+                }
+            }).addClass('active');
+            // for the treeview
+            $('ul.nav-treeview a').filter(function () {
+                if (this.href) {
+                    return this.href == url || url.href.indexOf(this.href) == 0;
+
+                }
+            }).parentsUntil(".nav-sidebar > .nav-treeview").css({ 'display': 'block' }).addClass('menu-open').addClass("menu-is-opening").prev('a').addClass('active');
+            $('ul.nav-sidebar a').filter(function () {
+                if (this.href == url || url.href.indexOf(this.href) == 0) {
+                    var selector = document.getElementsByClassName('nav-link active')[0];
+                    $("#olCaption").append('<li  class="breadcrumb-item">' + selector.text.trim() + '</li>');
+                    $("#olCaption").append('<li  class="breadcrumb-item">' + this.text.trim() + '</li>');
+                }
+            })
+
+            $(".loader").fadeOut();
+            $("#preloder").delay(200).fadeOut("slow");
+
+            /*------------------
+                Gallery filter
+            --------------------*/
+            $('.featured__controls li').on('click', function () {
+                $('.featured__controls li').removeClass('active');
+                $(this).addClass('active');
+            });
+            if ($('.featured__filter').length > 0) {
+                var containerEl = document.querySelector('.featured__filter');
+                var mixer = mixitup(containerEl);
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function (event) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "3000",
+                "hideDuration": "3000",
+                "timeOut": "3000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        });
+        $(document).ready(function () {
+            if (sessionStorage.getItem("Company") != null) {
+                var obj = JSON.parse(sessionStorage.getItem("Company"));
+                //$('#Title').text(obj.CompanyName);
+                $('#MenuCompany').text(obj.CompanyName_LNG2);
+            }
+            else {
+                $('#MenuCompany').text("ACE Data Systems");
+            }
+
+            var language = localStorage.getItem("OCRHlanguage");
+            if (language != null) {
+                $('#selLanguage').val(language);
+            }
+            else {
+                var valueSelected = $('#selLanguage').val();
+                /*          alert(valueSelected);*/
+                localStorage.removeItem('OCRHlanguage');
+                localStorage.setItem('OCRHlanguage', valueSelected);
+                ChangeLanguage(valueSelected);
+            }
+            //ShowProfile();
+        });
+
+        function getValidationMessage(maxlength) {
+            validationMessage = '@language.Getkey("MV00084")';
+            validationMessage = validationMessage.replace("*$*", maxlength);
+            return validationMessage;
+        }
+
+        $('#selLanguage').on('change', function (e) {
+            var valueSelected = this.value;
+            localStorage.removeItem('OCRHlanguage');
+            localStorage.setItem('OCRHlanguage', valueSelected);
+            ChangeLanguage(valueSelected);
+        });
+
+
+        function processDoc(doc) {
+            //pdfMake.fonts = {
+            //    Pyidaungsu: {
+            //        regular: 'Pyidaungsu.ttf',
+            //        bold: 'Pyidaungsu.ttf',
+            //        italics: 'Pyidaungsu.ttf',
+            //        bolditalics: 'Pyidaungsu.ttf'
+            //    }
+            //};
+            //doc.defaultStyle.font = "Pyidaungsu";
+        }
+
+        function ChangeLanguage(culture) {
+
+            //$.ajax({
+            //    url: "/AdminModule/Home/ChangeLanguage",
+            //    data: { culture: culture },
+            //});
+
+            var cultureURL;
+            $.ajax({
+                type: "GET",
+                url: "/AdminModule/Home/ChangeLanguage",
+                data: { culture: culture },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    cultureURL = response;
+                    location.reload();
+                    //window.location.replace(cultureURL);
+                    //window.location.href = cultureURL;
+                },
+                failure: function (response) {
+                    AlertMessage(1, response.message);
+                },
+                error: function (response) {
+                    AlertMessage(1, response.message);
+                }
+            });
+        }
+
+        function EditCurrentUser() {
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/AdminModule/User/EditCurrentUser",
+                contentType: "application/json;charset=UTF-8",
+                success: function (result) {
+                    $('#EditCurrentUserName').val(result.UserName);
+                    $("#EditCurrentID").val(result.Id);
+                    $('#EditCurrentID').hide();
+                    $('#EditCurrentEmail').val(result.Email);
+                    $('#EditFullName').val(result.FullName);
+                    $('#EditCurrentPhoneNo').val(result.PhoneNo);
+                    $('#EditCurrentNRCNo').val(result.NRCNo);
+                    $('#EditCurrentDepartment').val(result.Department);
+                    $('#editCurrentUserProfile').attr('src', result.UserImageStr);
+
+                    $('#editCurrentUser').modal('show');
+                },
+                error: function (errormessage) {
+                    AlertMessage(1, errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function ShowProfile() {
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/AdminModule/User/EditCurrentUser",
+                contentType: "application/json;charset=UTF-8",
+                success: function (result) {
+                    if (result.UserImageStr != "") {
+                        $('#userProfile').attr('src', result.UserImageStr);
+                    }
+
+
+                },
+                error: function (errormessage) {
+                    AlertMessage(1, errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function UpdateCurrentUser(form) {
+            $('.submit').attr('disabled', 'disabled');
+            $.validator.unobtrusive.parse(form);
+            var formData = new FormData(form);
+            var file = document.getElementById("EditCurrentimgfile").files[0];
+            formData.append("UserImage", file);
+            if ($(form).valid()) {
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: form.action,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data, status, xhr) {
+                        if (data.success) {
+                            $('#editCurrentUser').modal('hide');
+                            //$('.modal-backdrop').remove();
+                            toastr.clear();
+                            toastr.success(data.message);
+
+                        }
+                        else {
+                            $('#addModal').modal('hide');
+                            //$('#codeSetupTable').DataTable().ajax.reload();
+                            toastr.clear();
+                            toastr.error(data.message);
+                        }
+
+                    }
+                });
+            }
+            $('.submit').removeAttr('disabled');
+            return false;
+        }
+
+        var EditloadUserProfile = function (event) {
+            var image = document.getElementById('editCurrentUserProfile');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+        function ShowResetModalCurrentUser() {
+            var userName = $('#EditCurrentUserName').val();
+            var userId = $('#EditCurrentID').val();
+            $('#resetEmail').val($('#EditEmail').val());
+            $('#resetUserName').val(userName);
+            $('#resetUserId').val(userId);
+            $('#resetPassWord').val('');
+
+            $('#resetModal').modal('show');
+
+        }
+
+        function ResetPasswordCurrentUser(form) {
+            $('.submit').attr('disabled', 'disabled');
+            $.validator.unobtrusive.parse(form);
+            var formData = new FormData(form);
+            if ($(form).valid()) {
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: form.action,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data, status, xhr) {
+                        if (data.success) {
+                            $('#resetModal').modal('hide');
+                            $('#editUser').modal('hide');
+                            //$('.modal-backdrop').remove();
+                            toastr.clear();
+                            toastr.success(data.message);
+
+                        }
+                        else {
+                            $('#resetModal').modal('hide');
+                            //$('#codeSetupTable').DataTable().ajax.reload();
+                            toastr.clear();
+                            toastr.error(data.message);
+                        }
+
+                    }
+                });
+            }
+            $('.submit').removeAttr('disabled');
+            return false;
+        }
+
+        function AlertMessage(_status, message) {
+            toastr.clear();
+            switch (_status) {
+                case 0:
+                    toastr.info(message);
+                    break;
+                case 1:
+                    toastr.error(message);
+                    break;
+                case 2:
+                    toastr.success(message);
+                    break;
+                case 3:
+                    toastr.warning(message);
+                    break;
+            }
+        }
+
+        function getDateTimeFormatString(dt) {
+            var res = "";
+            res += dt.getDate();
+            res += "/";
+            res += dt.getMonth() + 1;
+            res += "/";
+            res += dt.getFullYear();
+            res += " ";
+            res += dt.getHours() > 12 ? dt.getHours() - 12 : dt.getHours();
+            res += ":";
+            res += dt.getMinutes();
+            res += ":";
+            res += dt.getSeconds();
+            res += " " + dt.getHours() > 11 ? " PM" : " AM";
+            return res;
+        }
+
+        function toogleText(textReadmore) {
+            var dots = document.getElementById("less_" + textReadmore);
+            var moreText = document.getElementById("more_" + textReadmore);
+            var btnText = document.getElementById("btn_" + textReadmore);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+    </script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+</body>
+</html>

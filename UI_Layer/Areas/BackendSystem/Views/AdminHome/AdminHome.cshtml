@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Admin Home";
+    Layout = "/Views/Shared/_AdminLteLayout.cshtml";
+}
+<h1>@ViewData["Title"]</h1>
+<script src="~/AdminLTE/plugins/jquery/jquery.min.js"></script>
+<p>Welcome to AdminLTE's Home Page'</p>
+
+<select class="form-control select2" style="width: 100%;" id ="ddSelect2">
+    <option selected="selected">Alabama</option>
+    <option>Alaska</option>
+    <option>California</option>
+    <option>Delaware</option>
+    <option>Tennessee</option>
+    <option>Texas</option>
+    <option>Washington</option>
+</select>
+<script src="~/AdminLTE/plugins/select2/js/select2.min.js"></script>
+<script>
+    $("#ddSelect2").select2();
+</script>

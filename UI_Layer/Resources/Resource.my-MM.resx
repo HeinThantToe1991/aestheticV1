@@ -1,0 +1,1224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MB00001" xml:space="preserve">
+    <value>သိမ်းပါ</value>
+  </data>
+  <data name="MB00002" xml:space="preserve">
+    <value>ပြင်ဆင်ပါ</value>
+  </data>
+  <data name="MB00003" xml:space="preserve">
+    <value>မလုပ်တော့ပါ</value>
+  </data>
+  <data name="MB00004" xml:space="preserve">
+    <value>ဖျက်ပါ</value>
+  </data>
+  <data name="MB00005" xml:space="preserve">
+    <value>ပြင်ဆင်မည်</value>
+  </data>
+  <data name="MB00006" xml:space="preserve">
+    <value>ကြည့်မည်</value>
+  </data>
+  <data name="MB00007" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="MB00008" xml:space="preserve">
+    <value>အသစ်ထည့်မည်</value>
+  </data>
+  <data name="MB00009" xml:space="preserve">
+    <value>ဝင်မည်</value>
+  </data>
+  <data name="MB00010" xml:space="preserve">
+    <value>မှတ်ပုံတင်မည်</value>
+  </data>
+  <data name="MB00011" xml:space="preserve">
+    <value>တာဝန်ပေးမည်</value>
+  </data>
+  <data name="MB00012" xml:space="preserve">
+    <value>ခွင့်ပြုချက်ပေးမည်</value>
+  </data>
+  <data name="MB00013" xml:space="preserve">
+    <value>ထုတ်မည်</value>
+  </data>
+  <data name="MB00014" xml:space="preserve">
+    <value>သွင်းမည်</value>
+  </data>
+  <data name="MB00015" xml:space="preserve">
+    <value>ဆက်လက်ဖတ်မည်</value>
+  </data>
+  <data name="MB00016" xml:space="preserve">
+    <value>အတည်ပြုမည်</value>
+  </data>
+  <data name="MB00017" xml:space="preserve">
+    <value>တင်မည်</value>
+  </data>
+  <data name="MB00018" xml:space="preserve">
+    <value>ပယ်ဖျတ်မည်</value>
+  </data>
+  <data name="MB00019" xml:space="preserve">
+    <value>Township Data Migration</value>
+  </data>
+  <data name="MB00020" xml:space="preserve">
+    <value>Currency Code Data Migration</value>
+  </data>
+  <data name="MB00021" xml:space="preserve">
+    <value>သေချာပါသည်</value>
+  </data>
+  <data name="MB00022" xml:space="preserve">
+    <value>Add Main</value>
+  </data>
+  <data name="MB00023" xml:space="preserve">
+    <value>Add Child</value>
+  </data>
+  <data name="MB00024" xml:space="preserve">
+    <value>ထည့်ပါ</value>
+  </data>
+  <data name="MB00025" xml:space="preserve">
+    <value>အရှေ့</value>
+  </data>
+  <data name="MB00026" xml:space="preserve">
+    <value>အနောက်</value>
+  </data>
+  <data name="MB00027" xml:space="preserve">
+    <value>ကူးယူမည်</value>
+  </data>
+  <data name="MC00001" xml:space="preserve">
+    <value>ဖျက်ရန် သေချာပါသလား?</value>
+  </data>
+  <data name="MC00002" xml:space="preserve">
+    <value>အတည်ပြုရန် သေချာပါသလား?</value>
+  </data>
+  <data name="MC00003" xml:space="preserve">
+    <value>သိမ်းဆည်းရန်သေချာပါသလား?</value>
+  </data>
+  <data name="MC00004" xml:space="preserve">
+    <value>ပယ်ဖျက်ရန် သေချာပါသလား?</value>
+  </data>
+  <data name="MC00005" xml:space="preserve">
+    <value>ပုံနှိပ်ရန်သေချာပါသလား?</value>
+  </data>
+  <data name="MC00006" xml:space="preserve">
+    <value>Default ပြုလုပ်ရန် သေချာပါသလား?</value>
+  </data>
+  <data name="ME00001" xml:space="preserve">
+    <value>သိမ်းဆည်းခြင်းတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00002" xml:space="preserve">
+    <value>အပ်ဒိတ်လုပ်ရာတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00003" xml:space="preserve">
+    <value>ဖျက်ခြင်းတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00004" xml:space="preserve">
+    <value>အတည်ပြုရာတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00005" xml:space="preserve">
+    <value>တင်သွင်းရာတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00006" xml:space="preserve">
+    <value>ထုတ်ယူရာတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00007" xml:space="preserve">
+    <value>အပ်လုဒ်လုပ်ရာတွင် အမှားအယွင်းရှိသည်။</value>
+  </data>
+  <data name="ME00008" xml:space="preserve">
+    <value>အမှားအယွင်းရှိနေသည်။</value>
+  </data>
+  <data name="MI00001" xml:space="preserve">
+    <value>အစီရင်ခံစာအတွက် ဒေတာမရှိပါ။</value>
+  </data>
+  <data name="MI00002" xml:space="preserve">
+    <value>ကြည့်ရှုရန် ဒေတာမရှိပါ။</value>
+  </data>
+  <data name="MI00003" xml:space="preserve">
+    <value>သိမ်းဆည်းခြင်း အောင်မြင်သည်။</value>
+  </data>
+  <data name="MI00004" xml:space="preserve">
+    <value>အပ်ဒိတ် အောင်မြင်ပါပြီ။</value>
+  </data>
+  <data name="MI00005" xml:space="preserve">
+    <value>ဖျက်ပြီးပါပြီ။</value>
+  </data>
+  <data name="MI00006" xml:space="preserve">
+    <value>ဒေတာမရနိုင်ပါ။</value>
+  </data>
+  <data name="MI00007" xml:space="preserve">
+    <value>အောင်မြင်ကြောင်း အတည်ပြုပါ။</value>
+  </data>
+  <data name="MI00008" xml:space="preserve">
+    <value>မှာယူမှုကို ဖျတ်သိမ်းမှု အောင်မြင်ပါပြီ။</value>
+  </data>
+  <data name="MI00009" xml:space="preserve">
+    <value>လုပ်ငန်းစဉ်ပြီးပါပြီ။</value>
+  </data>
+  <data name="MI00010" xml:space="preserve">
+    <value>ပြသရန် အချက်အလက်များမရှိပါ။</value>
+  </data>
+  <data name="MI00011" xml:space="preserve">
+    <value>ဤအီးမေးလ်မှာမှတ်ပုံတင်နှင့်ပြီးသားဖြစ်သည်!</value>
+  </data>
+  <data name="MI00012" xml:space="preserve">
+    <value>ဖျတ်ခွင့်မပြုပါ။</value>
+  </data>
+  <data name="MI00013" xml:space="preserve">
+    <value>Default sheet အားဖျတ်ခွင့်မပြုပါ။</value>
+  </data>
+  <data name="MI00014" xml:space="preserve">
+    <value>Default status အား ပြင်ဆင်ခွင့်မပြုပါ။</value>
+  </data>
+  <data name="MI00015" xml:space="preserve">
+    <value>Stock စျေးနှုန်းအားလုံးသည် ယခု Sheet ပေါ်မူတည်ပြီး ပြောင်းလဲသွားပါလိမ့်မည်။</value>
+  </data>
+  <data name="MI00016" xml:space="preserve">
+    <value> *$* ခုသာကျန်တော့ပါသဖြင့်စိတ်မကောင်းပါဘူးခင်ဗျာ</value>
+  </data>
+  <data name="ML00001" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="ML00002" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ML00003" xml:space="preserve">
+    <value>ရုပ်ပုံ</value>
+  </data>
+  <data name="ML00004" xml:space="preserve">
+    <value>လုပ်ဆောင်မှု</value>
+  </data>
+  <data name="ML00005" xml:space="preserve">
+    <value>ရောင်းစျေး</value>
+  </data>
+  <data name="ML00006" xml:space="preserve">
+    <value>ဝယ်စျေး</value>
+  </data>
+  <data name="ML00008" xml:space="preserve">
+    <value>ကျား</value>
+  </data>
+  <data name="ML00009" xml:space="preserve">
+    <value>မ</value>
+  </data>
+  <data name="ML00010" xml:space="preserve">
+    <value>အခြား</value>
+  </data>
+  <data name="ML00011" xml:space="preserve">
+    <value>မှတ်ချက်</value>
+  </data>
+  <data name="ML00012" xml:space="preserve">
+    <value>ဖုန်း နံပါတ်</value>
+  </data>
+  <data name="ML00013" xml:space="preserve">
+    <value>နာမည်</value>
+  </data>
+  <data name="ML00014" xml:space="preserve">
+    <value>တံဆိပ်</value>
+  </data>
+  <data name="ML00015" xml:space="preserve">
+    <value>အရှည်</value>
+  </data>
+  <data name="ML00016" xml:space="preserve">
+    <value>အကျယ်</value>
+  </data>
+  <data name="ML00017" xml:space="preserve">
+    <value>အမြင့်</value>
+  </data>
+  <data name="ML00018" xml:space="preserve">
+    <value>ရက် မှ</value>
+  </data>
+  <data name="ML00019" xml:space="preserve">
+    <value>ရက် သို့</value>
+  </data>
+  <data name="ML00020" xml:space="preserve">
+    <value>နာမည် မှ</value>
+  </data>
+  <data name="ML00021" xml:space="preserve">
+    <value>နာမည် သို့</value>
+  </data>
+  <data name="ML00022" xml:space="preserve">
+    <value>ပြေစာ မှ</value>
+  </data>
+  <data name="ML00023" xml:space="preserve">
+    <value>ပြေစာ သို့</value>
+  </data>
+  <data name="ML00024" xml:space="preserve">
+    <value>အခန်းကဏ္ဍ</value>
+  </data>
+  <data name="ML00025" xml:space="preserve">
+    <value>လိပ်စာ</value>
+  </data>
+  <data name="ML00026" xml:space="preserve">
+    <value>Merchant Discount Rate</value>
+  </data>
+  <data name="ML00027" xml:space="preserve">
+    <value>Flat Rate</value>
+  </data>
+  <data name="ML00028" xml:space="preserve">
+    <value>Markup Fee</value>
+  </data>
+  <data name="ML00029" xml:space="preserve">
+    <value>Transaction တစ်ခု</value>
+  </data>
+  <data name="ML00030" xml:space="preserve">
+    <value>ပြေစာ နံပါတ်</value>
+  </data>
+  <data name="ML00031" xml:space="preserve">
+    <value>စျေးဝယ်သူမှပေးဆောင်သည်</value>
+  </data>
+  <data name="ML00032" xml:space="preserve">
+    <value>ဆိုင်မှပေးဆောင်သည်</value>
+  </data>
+  <data name="ML00033" xml:space="preserve">
+    <value>အခြေခံ Unit</value>
+  </data>
+  <data name="ML00034" xml:space="preserve">
+    <value>Unit Rate သို့</value>
+  </data>
+  <data name="ML00035" xml:space="preserve">
+    <value>ပုံသေ</value>
+  </data>
+  <data name="ML00036" xml:space="preserve">
+    <value>နာမည်</value>
+  </data>
+  <data name="ML00037" xml:space="preserve">
+    <value>Unit နှုန်း</value>
+  </data>
+  <data name="ML00038" xml:space="preserve">
+    <value>ထုပ်ပိုးမှုအမျိူးအစား</value>
+  </data>
+  <data name="ML00039" xml:space="preserve">
+    <value>အရေအတွက် မှ</value>
+  </data>
+  <data name="ML00040" xml:space="preserve">
+    <value>အရေ အတွက် သို့</value>
+  </data>
+  <data name="ML00041" xml:space="preserve">
+    <value>အရေအတွက်</value>
+  </data>
+  <data name="ML00043" xml:space="preserve">
+    <value>ပစ္စည်းနံပါတ်</value>
+  </data>
+  <data name="ML00044" xml:space="preserve">
+    <value>အဖွင့်လက်ကျန်</value>
+  </data>
+  <data name="ML00045" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="ML00046" xml:space="preserve">
+    <value>ပို့ဆောင်မှု</value>
+  </data>
+  <data name="ML00047" xml:space="preserve">
+    <value>လက်ရှိ</value>
+  </data>
+  <data name="ML00048" xml:space="preserve">
+    <value>မြို့</value>
+  </data>
+  <data name="ML00049" xml:space="preserve">
+    <value>ပြည်နယ်ဌာနခွဲ</value>
+  </data>
+  <data name="ML00050" xml:space="preserve">
+    <value>ခရိုင်</value>
+  </data>
+  <data name="ML00051" xml:space="preserve">
+    <value>ကျား/မ</value>
+  </data>
+  <data name="ML00052" xml:space="preserve">
+    <value>ပြုလုပ်သည့်နေ့</value>
+  </data>
+  <data name="ML00053" xml:space="preserve">
+    <value>ပြုလုပ်သည့်သူ</value>
+  </data>
+  <data name="ML00054" xml:space="preserve">
+    <value>ပြုပြင်သည့်နေ့</value>
+  </data>
+  <data name="ML00055" xml:space="preserve">
+    <value>ပြုပြင်သည့်သူ</value>
+  </data>
+  <data name="ML00056" xml:space="preserve">
+    <value>စျေးဝယ်သူ</value>
+  </data>
+  <data name="ML00057" xml:space="preserve">
+    <value>အမျိူးအစား</value>
+  </data>
+  <data name="ML00058" xml:space="preserve">
+    <value>စျေးနှုန်း</value>
+  </data>
+  <data name="ML00059" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ML00060" xml:space="preserve">
+    <value>ခေါင်းစဉ်</value>
+  </data>
+  <data name="ML00061" xml:space="preserve">
+    <value>အသေးစိတ်</value>
+  </data>
+  <data name="ML00062" xml:space="preserve">
+    <value>ဆက်သွယ်ရန် နံပါတ်</value>
+  </data>
+  <data name="ML00063" xml:space="preserve">
+    <value>ပမာဏ</value>
+  </data>
+  <data name="ML00064" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ML00065" xml:space="preserve">
+    <value>အရင်းအမြစ်</value>
+  </data>
+  <data name="ML00066" xml:space="preserve">
+    <value>နေ့စွဲ</value>
+  </data>
+  <data name="ML00067" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="ML00068" xml:space="preserve">
+    <value>နံပါတ်စဉ်</value>
+  </data>
+  <data name="ML00069" xml:space="preserve">
+    <value>လမ်းကြောင်း</value>
+  </data>
+  <data name="ML00070" xml:space="preserve">
+    <value>လမ်းကြောင်း အချိန်ဇယား</value>
+  </data>
+  <data name="ML00071" xml:space="preserve">
+    <value>ပို့ဆောင်မှု အမျိုးအစား</value>
+  </data>
+  <data name="ML00072" xml:space="preserve">
+    <value>ပို့ဆောင်မည့်သူ</value>
+  </data>
+  <data name="ML00075" xml:space="preserve">
+    <value>ဆက်သွယ်ရန်အမည်</value>
+  </data>
+  <data name="ML00076" xml:space="preserve">
+    <value>ငွေပေးချေမှု အမျိူးအစား</value>
+  </data>
+  <data name="ML00077" xml:space="preserve">
+    <value>စုစုပေါင်းအခွဲ</value>
+  </data>
+  <data name="ML00078" xml:space="preserve">
+    <value>အခွန်</value>
+  </data>
+  <data name="ML00079" xml:space="preserve">
+    <value>စုစုပေါင်း</value>
+  </data>
+  <data name="ML00080" xml:space="preserve">
+    <value>ပို့ဆောင်မှု</value>
+  </data>
+  <data name="ML00081" xml:space="preserve">
+    <value>COD မှ လက်ခံရရှိသည်</value>
+  </data>
+  <data name="ML00082" xml:space="preserve">
+    <value>Order No</value>
+  </data>
+  <data name="ML00083" xml:space="preserve">
+    <value>Order ရက်စွဲ</value>
+  </data>
+  <data name="ML00084" xml:space="preserve">
+    <value>စုစုပေါင်း ပမာဏ</value>
+  </data>
+  <data name="ML00085" xml:space="preserve">
+    <value>ပင်မ</value>
+  </data>
+  <data name="ML00086" xml:space="preserve">
+    <value>စျေးဝယ်မည်</value>
+  </data>
+  <data name="ML00087" xml:space="preserve">
+    <value>ဆက်သွယ်ရန်</value>
+  </data>
+  <data name="ML00088" xml:space="preserve">
+    <value>သတ်မှတ်ချက်များ</value>
+  </data>
+  <data name="ML00089" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="ML00090" xml:space="preserve">
+    <value>ပိုမိုလေ့လာရန်</value>
+  </data>
+  <data name="ML00091" xml:space="preserve">
+    <value>မှတ်ပုံတင်ထားသောရက်စွဲ</value>
+  </data>
+  <data name="ML00092" xml:space="preserve">
+    <value>အရောင်းအမှာ</value>
+  </data>
+  <data name="ML00093" xml:space="preserve">
+    <value>လွန်ခဲ့သော တစ်ပတ်အတွင်း</value>
+  </data>
+  <data name="ML00094" xml:space="preserve">
+    <value>စွမ်းဆောင်ရည်အကောင်းဆုံး Customer ၁၀ ဦး</value>
+  </data>
+  <data name="ML00095" xml:space="preserve">
+    <value>အရောင်းအကောင်းဆုံး ထုတ်ကုန် ၁၀ ခု</value>
+  </data>
+  <data name="ML00096" xml:space="preserve">
+    <value>လအလိုက် စုစုပေါင်းရောင်းအား</value>
+  </data>
+  <data name="ML00097" xml:space="preserve">
+    <value>အမျိုးအစား</value>
+  </data>
+  <data name="ML00098" xml:space="preserve">
+    <value>အသုံးပြသူများ</value>
+  </data>
+  <data name="ML00099" xml:space="preserve">
+    <value>ဓာတ်ပုံ</value>
+  </data>
+  <data name="ML00100" xml:space="preserve">
+    <value>အသုံးပြုသူအချက်အလက်</value>
+  </data>
+  <data name="ML00101" xml:space="preserve">
+    <value>အသက်အလိုက် အသုံးပြုသူအချက်အလက်</value>
+  </data>
+  <data name="ML00102" xml:space="preserve">
+    <value>မြို့နယ်အလိုက် သုံးစွဲသူအချက်အလက်</value>
+  </data>
+  <data name="ML00103" xml:space="preserve">
+    <value>တစ်ခုရွေးချယ်ပါ</value>
+  </data>
+  <data name="ML00104" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="ML00105" xml:space="preserve">
+    <value>Controller</value>
+  </data>
+  <data name="ML00106" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ML00107" xml:space="preserve">
+    <value>မပြသပါ</value>
+  </data>
+  <data name="ML00108" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ML00109" xml:space="preserve">
+    <value>ကုန်ပစ္စည်း</value>
+  </data>
+  <data name="ML00110" xml:space="preserve">
+    <value>အမျိုးအစား</value>
+  </data>
+  <data name="ML00111" xml:space="preserve">
+    <value>အဖွဲ့</value>
+  </data>
+  <data name="ML00112" xml:space="preserve">
+    <value>အတန်း</value>
+  </data>
+  <data name="ML00113" xml:space="preserve">
+    <value>တိုင်းတာမှုယူနစ်များ</value>
+  </data>
+  <data name="ML00114" xml:space="preserve">
+    <value>UM</value>
+  </data>
+  <data name="ML00115" xml:space="preserve">
+    <value>အဓိကကုဒ်များသွင်းခြင်း</value>
+  </data>
+  <data name="ML00116" xml:space="preserve">
+    <value>မှ</value>
+  </data>
+  <data name="ML00117" xml:space="preserve">
+    <value>သို့</value>
+  </data>
+  <data name="ML00118" xml:space="preserve">
+    <value>ပင်မကုဒ်ကို ထုတ်ယူပါ</value>
+  </data>
+  <data name="ML00119" xml:space="preserve">
+    <value>ဒေါင်းလုဒ်လုပ်ပါ</value>
+  </data>
+  <data name="ML00120" xml:space="preserve">
+    <value>ဝယ်ယူသူအမည်</value>
+  </data>
+  <data name="ML00121" xml:space="preserve">
+    <value>Logo ရွေးချယ်ပါ</value>
+  </data>
+  <data name="ML00122" xml:space="preserve">
+    <value>ပုံရွေးချယ်ပါ</value>
+  </data>
+  <data name="ML00123" xml:space="preserve">
+    <value>Company နာမည်</value>
+  </data>
+  <data name="ML00124" xml:space="preserve">
+    <value>အတိုကောက် နာမည်</value>
+  </data>
+  <data name="ML00125" xml:space="preserve">
+    <value>Home Currency</value>
+  </data>
+  <data name="ML00126" xml:space="preserve">
+    <value>ငွေကြေးနှုန်း</value>
+  </data>
+  <data name="ML00127" xml:space="preserve">
+    <value>လဲလှယ် သည့်နေ့</value>
+  </data>
+  <data name="ML00128" xml:space="preserve">
+    <value>လဲလှယ်သည့်နှုန်း</value>
+  </data>
+  <data name="ML00129" xml:space="preserve">
+    <value>စျေးဝယ်သူ</value>
+  </data>
+  <data name="ML00130" xml:space="preserve">
+    <value>လူကြိုက်များဆုံးကုန်ပစ္စည်းများ</value>
+  </data>
+  <data name="ML00131" xml:space="preserve">
+    <value>Register အရေအတွက်</value>
+  </data>
+  <data name="ML00132" xml:space="preserve">
+    <value>ပိုမိုလေ့လာရန်</value>
+  </data>
+  <data name="ML00133" xml:space="preserve">
+    <value>မြို့နယ်အလိုက်အသုံးပြုသူ၏အချက်အလက်များ</value>
+  </data>
+  <data name="ML00134" xml:space="preserve">
+    <value>လအလိုက် ဝယ်ယူသူအသစ်များ</value>
+  </data>
+  <data name="ML00135" xml:space="preserve">
+    <value>User Information By Age</value>
+  </data>
+  <data name="ML00136" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ System administrator ၏ အတည်ပြုချက်ကို စောင့်ပါ။</value>
+  </data>
+  <data name="ML00137" xml:space="preserve">
+    <value>ဝင်ရောက်ရန်ခွင့်ပြုချက်လိုအပ်သည်။</value>
+  </data>
+  <data name="ML00138" xml:space="preserve">
+    <value>မင်္ဂလာပါ </value>
+  </data>
+  <data name="ML00139" xml:space="preserve">
+    <value>စာရင်း</value>
+  </data>
+  <data name="ML00140" xml:space="preserve">
+    <value>ဆက်သွယ်ရန်အချက်အလက်များ</value>
+  </data>
+  <data name="ML00141" xml:space="preserve">
+    <value>အီးမေးလ်</value>
+  </data>
+  <data name="ML00142" xml:space="preserve">
+    <value>အော်ဒါဖျက်သိမ်းသည်</value>
+  </data>
+  <data name="ML00143" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="ML00144" xml:space="preserve">
+    <value>PDF ကိုထုတ်လုပ်ပါ</value>
+  </data>
+  <data name="ML00145" xml:space="preserve">
+    <value>ပစ္စည်းရောက်ငွေချေပါ</value>
+  </data>
+  <data name="ML00146" xml:space="preserve">
+    <value>အရောင်းအမှာစာ တင်ပို့ခြင်</value>
+  </data>
+  <data name="ML00147" xml:space="preserve">
+    <value>တင်ပို့ခြင်</value>
+  </data>
+  <data name="ML00148" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="ML00149" xml:space="preserve">
+    <value>စတော့လက်ကျန်</value>
+  </data>
+  <data name="ML00150" xml:space="preserve">
+    <value>တည်နေရာ</value>
+  </data>
+  <data name="ML00151" xml:space="preserve">
+    <value>အဖွင့်လက်ကျန်</value>
+  </data>
+  <data name="ML00152" xml:space="preserve">
+    <value>စတော့အသေးစိတ်</value>
+  </data>
+  <data name="ML00153" xml:space="preserve">
+    <value>Delivery Zone</value>
+  </data>
+  <data name="ML00154" xml:space="preserve">
+    <value>ပို့ဆောင်ချိန် (ရက်)</value>
+  </data>
+  <data name="ML00155" xml:space="preserve">
+    <value>နှုန်းထား</value>
+  </data>
+  <data name="ML00156" xml:space="preserve">
+    <value>လမ်းကြောင်းနံပါတ်</value>
+  </data>
+  <data name="ML00157" xml:space="preserve">
+    <value>အရောင်းအမှာစာ၏ ပို့ဆောင်မည့်ရက်ကို ခန့်မှန်းပါ</value>
+  </data>
+  <data name="ML00158" xml:space="preserve">
+    <value>အကြောင်းအရာ နံပါတ်</value>
+  </data>
+  <data name="ML00159" xml:space="preserve">
+    <value>အဖြစ် ကူးယူပြီးပါပြီ။</value>
+  </data>
+  <data name="ML00160" xml:space="preserve">
+    <value>ဝယ်ယူမည်</value>
+  </data>
+  <data name="ML00161" xml:space="preserve">
+    <value>ကျပ်</value>
+  </data>
+  <data name="ML00162" xml:space="preserve">
+    <value>ခု ရှိပါသည်</value>
+  </data>
+  <data name="ML00163" xml:space="preserve">
+    <value>အမျိူးအစားအလိုက်ဝယ်ယူနိုင်ပါသည်</value>
+  </data>
+  <data name="ML00164" xml:space="preserve">
+    <value>ပစ္စည်း "၁" ခုကို သင့်စျေလှည်းသို့ ပေါင်းထည့်လိုက်ပါပြီ။</value>
+  </data>
+  <data name="ML00165" xml:space="preserve">
+    <value>ပစ္စည်းအရေအတွက်ကို သင့်စျေးလှည်း တွင် ပြုပြင်ပြီး ပါပြီ။</value>
+  </data>
+  <data name="ML00166" xml:space="preserve">
+    <value>စျေးနှုန်း</value>
+  </data>
+  <data name="ML00167" xml:space="preserve">
+    <value>ပစ္စည်း</value>
+  </data>
+  <data name="ML00168" xml:space="preserve">
+    <value>စျေးဆက်ဝယ်ပါမည်</value>
+  </data>
+  <data name="ML00169" xml:space="preserve">
+    <value>စျေးလှည်းအားပြင်ဆင်ပါမည်</value>
+  </data>
+  <data name="ML00170" xml:space="preserve">
+    <value>​စျေးလှည်းထဲရှိစုစုပေါင်းငွေပမာဏ</value>
+  </data>
+  <data name="ML00171" xml:space="preserve">
+    <value>ငွေရှင်းရန်ဆက်လုပ်ပါမည်</value>
+  </data>
+  <data name="ML00172" xml:space="preserve">
+    <value>ပစ္စည်းကို သင့်စျေးဝယ်လှည်းမှ ဖယ်ရှားလိုက်ပါပြီ။</value>
+  </data>
+  <data name="ML00173" xml:space="preserve">
+    <value>ပို့ဆောင်ခ</value>
+  </data>
+  <data name="ML00174" xml:space="preserve">
+    <value>စုစုပေါင်းကျသင့်ငွေ</value>
+  </data>
+  <data name="ML00175" xml:space="preserve">
+    <value>ပစ္စည်းတန်ဖိူးစုစုပေါင်း</value>
+  </data>
+  <data name="ML00176" xml:space="preserve">
+    <value>စျေးလှည်းအားပြင်ဆင်ပြီးပါပြီ။</value>
+  </data>
+  <data name="ML00177" xml:space="preserve">
+    <value>သင့်စျေးလှည်းတွင်မည်သည့်ပစ္စည်းမှမရှိသေးပါ။</value>
+  </data>
+  <data name="ML00178" xml:space="preserve">
+    <value>ပစ္စည်းအမှာစာရင်း</value>
+  </data>
+  <data name="ML00179" xml:space="preserve">
+    <value>ပစ္စည်းအမှာတင်ပါမည်</value>
+  </data>
+  <data name="ML00180" xml:space="preserve">
+    <value>ဖုန်းဖြင့်ဆက်သွယ် မေးမြန်းနိုင်ပါသည်။</value>
+  </data>
+  <data name="MV00001" xml:space="preserve">
+    <value>စာလုံးရေကန့်သတ်ချက် ကျော်လွန်နေပါသည်။</value>
+  </data>
+  <data name="MV00002" xml:space="preserve">
+    <value>သိမ်းဆည်းပြီးသားအချက်အလက်ဖြစ်နေပါသည်။</value>
+  </data>
+  <data name="MV00003" xml:space="preserve">
+    <value>စကားဝှက် မမှန်ပါ။</value>
+  </data>
+  <data name="MV00004" xml:space="preserve">
+    <value>အနည်းဆုံး Parent Menu တစ်ခုကို ရွေးပါ။</value>
+  </data>
+  <data name="MV00005" xml:space="preserve">
+    <value>အတည်ပြု စကားဝှက်သည် မမှန်ကန်ကြောင်း ပါ။</value>
+  </data>
+  <data name="MV00006" xml:space="preserve">
+    <value>Code ထပ််နေပါသည်။</value>
+  </data>
+  <data name="MV00007" xml:space="preserve">
+    <value>အီးမေးလ် နာမည် မမှန်ပါ။</value>
+  </data>
+  <data name="MV00008" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ အနည်းဆုံး မှတ်တမ်းတစ်ခုကို ရွေးပါ။</value>
+  </data>
+  <data name="MV00009" xml:space="preserve">
+    <value>ဖြည့်စွက်ရန် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00010" xml:space="preserve">
+    <value>FromDate သည် ToDate ထက်နည်းရမည်။</value>
+  </data>
+  <data name="MV00011" xml:space="preserve">
+    <value>လက်ကျန်ကို အပ်ဒိတ်လုပ်ရန် မလုံလောက်ပါ။</value>
+  </data>
+  <data name="MV00012" xml:space="preserve">
+    <value>အဖွဲ့အမည် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00013" xml:space="preserve">
+    <value>MenuName လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00014" xml:space="preserve">
+    <value>စကားဝှက် လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00015" xml:space="preserve">
+    <value>အသုံးပြုသူအမည် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00016" xml:space="preserve">
+    <value>လက်ရှိ စကားဝှက် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00017" xml:space="preserve">
+    <value>ဖော်ပြချက် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00018" xml:space="preserve">
+    <value>ကုဒ်လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00019" xml:space="preserve">
+    <value>ရက်စွဲ လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00020" xml:space="preserve">
+    <value>Currency ဖြည့်ရန် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00021" xml:space="preserve">
+    <value>Exchange Rate လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00022" xml:space="preserve">
+    <value>အရှည် လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00023" xml:space="preserve">
+    <value>Package Weight is required.</value>
+  </data>
+  <data name="MV00024" xml:space="preserve">
+    <value>အကျယ်လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00025" xml:space="preserve">
+    <value>အမြင့်လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00026" xml:space="preserve">
+    <value>ပြည်နယ်တိုင်း လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00027" xml:space="preserve">
+    <value>ခရိုင်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00028" xml:space="preserve">
+    <value>မြို့နယ်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00029" xml:space="preserve">
+    <value>သိမ်းဆည်းရန်ဒေတာမရှိပါ။</value>
+  </data>
+  <data name="MV00030" xml:space="preserve">
+    <value>ပို့ဆောင်မှုအမျိုးအစား လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00031" xml:space="preserve">
+    <value>Delivery Zone လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00032" xml:space="preserve">
+    <value>Package အမျိုးအစား လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00033" xml:space="preserve">
+    <value>Lead Time လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00034" xml:space="preserve">
+    <value>Rate လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00035" xml:space="preserve">
+    <value>Merchant Discount Rate လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00036" xml:space="preserve">
+    <value>Flat Rate လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00037" xml:space="preserve">
+    <value>Stock Name လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00038" xml:space="preserve">
+    <value>အမျိုးအစား လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00039" xml:space="preserve">
+    <value>အဖွဲ့လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00040" xml:space="preserve">
+    <value>အတန်းလိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00041" xml:space="preserve">
+    <value>Stock Detail လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00042" xml:space="preserve">
+    <value>အခြေခံယူနစ် လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00043" xml:space="preserve">
+    <value>Main Stock Image လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00044" xml:space="preserve">
+    <value>Stock No လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00045" xml:space="preserve">
+    <value>UM လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00046" xml:space="preserve">
+    <value>Unit Rate လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00047" xml:space="preserve">
+    <value>Price Sheet No လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00048" xml:space="preserve">
+    <value>From Quantity လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00049" xml:space="preserve">
+    <value>To Quantity လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00050" xml:space="preserve">
+    <value>အရောင်းစျေးနှုန်း လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00051" xml:space="preserve">
+    <value>Information တူညီနေပါသည်။</value>
+  </data>
+  <data name="MV00052" xml:space="preserve">
+    <value>အဖွင့်လက်ကျန် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00053" xml:space="preserve">
+    <value>တည်နေရာ လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00054" xml:space="preserve">
+    <value>Customer အမျိုးအစားကို လိုအပ်ပါသည်။.</value>
+  </data>
+  <data name="MV00055" xml:space="preserve">
+    <value>မှတ်ချက် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00056" xml:space="preserve">
+    <value>ဖိုင်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00057" xml:space="preserve">
+    <value>ပုံလိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00058" xml:space="preserve">
+    <value>ခေါင်းစီး လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00059" xml:space="preserve">
+    <value>အသေးစိတ်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00060" xml:space="preserve">
+    <value>အကြောင်းပြချက် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00061" xml:space="preserve">
+    <value>Schedule No လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00062" xml:space="preserve">
+    <value>လမ်းကြောင်း လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00063" xml:space="preserve">
+    <value>ပို့ဆောင်သူ လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00064" xml:space="preserve">
+    <value>လက်ခံရရှိသော COD လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00065" xml:space="preserve">
+    <value>Content No လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00066" xml:space="preserve">
+    <value>ပင်မစာတန်း လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00067" xml:space="preserve">
+    <value>E-commerce Detail URL လိုအပ်သည်။</value>
+  </data>
+  <data name="MV00068" xml:space="preserve">
+    <value>ပို့စ်အတွက် အကြောင်းအရာမရှိပါ။</value>
+  </data>
+  <data name="MV00069" xml:space="preserve">
+    <value>အနည်းဆုံး လူတစ်ဦးကို ရွေးချယ်ပါ။</value>
+  </data>
+  <data name="MV00070" xml:space="preserve">
+    <value>ဆက်လက်လုပ်ဆောင်ရန် ခွင့်ပြုချက်တောင်းခံပါ။</value>
+  </data>
+  <data name="MV00071" xml:space="preserve">
+    <value>အသုံးပြုသူအမည် မမှန်ကန်ပါ!</value>
+  </data>
+  <data name="MV00072" xml:space="preserve">
+    <value> Email မမှန်ကန်ပါ!</value>
+  </data>
+  <data name="MV00073" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ စာလုံး 5 လုံးထက်မပိုစေရပါ။</value>
+  </data>
+  <data name="MV00074" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ စာလုံး 50 လုံးထက်မပိုစေရပါ။</value>
+  </data>
+  <data name="MV00075" xml:space="preserve">
+    <value>ဆက်သွယ်ရန်ပုဂ္ဂိုလ်ကိုဖြည့်သွင်းပါ!</value>
+  </data>
+  <data name="MV00076" xml:space="preserve">
+    <value>Company လမ်းနာမည်အားဖြည့်သွင်းပါ!</value>
+  </data>
+  <data name="MV00089" xml:space="preserve">
+    <value>ဤစာကွက်လပ်မှာဖြည့်ရန်လိုအပ်ပါသည်</value>
+  </data>
+  <data name="MV00077" xml:space="preserve">
+    <value>Company ၏ logo အားရွေးချယ်ပါ!</value>
+  </data>
+  <data name="MV00090" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ စာလုံး 100 လုံးထက်မပိုစေရပါ။</value>
+  </data>
+  <data name="MV00078" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ စာလုံး 200 လုံးထက်မပိုစေရပါ။</value>
+  </data>
+  <data name="MV00079" xml:space="preserve">
+    <value>တစ်ခုရွေးချယ်ပါ</value>
+  </data>
+  <data name="MV00080" xml:space="preserve">
+    <value>လိပ်စာအပြည့်အစုံလိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00081" xml:space="preserve">
+    <value>နာမည်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00082" xml:space="preserve">
+    <value>ဖုန်းနံပါတ်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00083" xml:space="preserve">
+    <value>Email လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00084" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ စာလုံး *$*  လုံးထက်မပိုစေရပါ။</value>
+  </data>
+  <data name="MV00085" xml:space="preserve">
+    <value>ပို့ဆောင်ခ အားဖြည့်ရန်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00086" xml:space="preserve">
+    <value>ပုံ၏ နာမည်မှားနေပါသည်။ နာမည်အားပြောင်းပေးရန်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MV00087" xml:space="preserve">
+    <value>ပုံ၏ နာမည်မှာစာလုံးရေ ၅၀ အထိသာရှိခွင့်ပြုပါသည်။</value>
+  </data>
+  <data name="MV00088" xml:space="preserve">
+    <value>ပုံ၏ သိမ်းဆည်းမည့် ပမာဏ များနေပါသဖြင့် အနည်းငယ်လျှော့ချပေးရန်လိုအပ်ပါသည်</value>
+  </data>
+  <data name="MV00091" xml:space="preserve">
+    <value>ဆက်သွယ်ရမည့်သူ၏ နာမည်အားလိုအပ်ပါသည်။</value>
+  </data>
+  <data name="MI00017" xml:space="preserve">
+    <value>အဆင်မပြေမှုအတွက် တောင်းပန်အပ်ပါသည်။</value>
+  </data>
+  <data name="MI00018" xml:space="preserve">
+    <value>သင့်တည်နေရာ သို့ မပို့ဆောင်‌ပေးနိုင်သေးသည့်အတွက် တောင်းပန်ပါသည်။</value>
+  </data>
+  <data name="MI00019" xml:space="preserve">
+    <value>မြို့နယ်လိပ်စာပြောင်းပေးပါ။</value>
+  </data>
+  <data name="MI00020" xml:space="preserve">
+    <value>*မှတ်ချက်, အရည်အတွက်အား ပြောင်းလဲပြီးလျှင် ဒီနေရာကိုနိုပ်ပါ။</value>
+  </data>
+  <data name="MB00028" xml:space="preserve">
+    <value>ဖိတ်ခေါ်မည်</value>
+  </data>
+  <data name="MI00021" xml:space="preserve">
+    <value>ဖိတ်စာပို့ပြီးပါပြီ။</value>
+  </data>
+  <data name="ML00181" xml:space="preserve">
+    <value>ပို့ဆောင်မည့်ရက်</value>
+  </data>
+  <data name="MI00022" xml:space="preserve">
+    <value>ထိုအရေအတွက်အားမရနိုင်သေးပါ။</value>
+  </data>
+  <data name="ML00182" xml:space="preserve">
+    <value>ORDER များ</value>
+  </data>
+  <data name="ML00183" xml:space="preserve">
+    <value>ကြည့်ရှုနေသူများ</value>
+  </data>
+  <data name="ML00184" xml:space="preserve">
+    <value>အသုံးပြုနေသူများ</value>
+  </data>
+  <data name="MB00029" xml:space="preserve">
+    <value>Excel ထုတ်မည်</value>
+  </data>
+  <data name="MB00030" xml:space="preserve">
+    <value>Excel မှသွင်းမည်</value>
+  </data>
+  <data name="MB00031" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="ML00185" xml:space="preserve">
+    <value>အသုံးပြုသူ</value>
+  </data>
+  <data name="ML00186" xml:space="preserve">
+    <value>မွေးနေ့</value>
+  </data>
+  <data name="ML00187" xml:space="preserve">
+    <value>မြို့နယ်အလိုက်ဝယ်ယူသူများ</value>
+  </data>
+  <data name="ML00188" xml:space="preserve">
+    <value>Order No မှ</value>
+  </data>
+  <data name="ML00189" xml:space="preserve">
+    <value>Order No အထိ</value>
+  </data>
+  <data name="ML00190" xml:space="preserve">
+    <value>ပုံနိပ် ရက်စွဲ</value>
+  </data>
+  <data name="ML00191" xml:space="preserve">
+    <value>Category No</value>
+  </data>
+  <data name="ML00192" xml:space="preserve">
+    <value>Cartegory Name</value>
+  </data>
+  <data name="ML00193" xml:space="preserve">
+    <value>စုစုပေါင်း Invoice ပမာဏ</value>
+  </data>
+  <data name="MI00023" xml:space="preserve">
+    <value>အသုံးပြုနေသည့်အတွက် ပြင်ဆင်ခွင့်မပြုပါ။</value>
+  </data>
+  <data name="MI00024" xml:space="preserve">
+    <value>Username မှာ အသုံးပြုပြီးသားဖြစ်နေပါသည်။</value>
+  </data>
+  <data name="MI00025" xml:space="preserve">
+    <value>Email မှာ အသုံးပြုပြီးသားဖြစ်နေပါသည်။</value>
+  </data>
+  <data name="ML00194" xml:space="preserve">
+    <value>နာမည် အပြည့်အစုံ</value>
+  </data>
+  <data name="ML00195" xml:space="preserve">
+    <value>ခန့်မှန်း ပို့ဆောင်မည့်နေ့</value>
+  </data>
+  <data name="ML00196" xml:space="preserve">
+    <value>ပို့ဆောင်ရမည့်နေ့</value>
+  </data>
+  <data name="ML00197" xml:space="preserve">
+    <value>ခန့်မှန်း ပို့ဆောင်မည့်နေ့ မှ</value>
+  </data>
+  <data name="ML00198" xml:space="preserve">
+    <value>ခန့်မှန်း ပို့ဆောင်မည့်နေ့ အထိ</value>
+  </data>
+  <data name="ML00199" xml:space="preserve">
+    <value>ပို့ဆောင်ရမည့်နေ့ မှ</value>
+  </data>
+  <data name="ML00200" xml:space="preserve">
+    <value>ပို့ဆောင်ရမည့်နေ့ အထိ</value>
+  </data>
+  <data name="ML00201" xml:space="preserve">
+    <value>ပို့ဆောင်မည့်သူ မှ</value>
+  </data>
+  <data name="ML00202" xml:space="preserve">
+    <value>ပို့ဆောင်မည့်သူ အထိ</value>
+  </data>
+  <data name="MV00092" xml:space="preserve">
+    <value>"To Quantity" သည် "From Quantity" ထက်ကြီးရပါမည်။</value>
+  </data>
+  <data name="MI00026" xml:space="preserve">
+    <value>အကောင့်အား ယာယီပိတ်ထားပါသည်၊ ကျေးဇူးပြု၍ စနစ်စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။</value>
+  </data>
+  <data name="MI00027" xml:space="preserve">
+    <value>ဆက်လက်ဆောင်ရွက်ရန် ကျေးဇူးပြု၍ လော့ဂ်အင်ဝင်ပါ။ !</value>
+  </data>
+  <data name="ML00203" xml:space="preserve">
+    <value>ရက်</value>
+  </data>
+  <data name="ML00204" xml:space="preserve">
+    <value>လ</value>
+  </data>
+  <data name="ML00205" xml:space="preserve">
+    <value>ခုနှစ်</value>
+  </data>
+  <data name="ML00206" xml:space="preserve">
+    <value>မွေးရက်</value>
+  </data>
+  <data name="ML00207" xml:space="preserve">
+    <value>မွေးလ</value>
+  </data>
+  <data name="ML00208" xml:space="preserve">
+    <value>မွေးနှစ်</value>
+  </data>
+</root>
