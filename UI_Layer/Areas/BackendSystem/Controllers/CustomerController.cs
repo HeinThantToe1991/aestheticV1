@@ -15,6 +15,7 @@ using UI_Layer.Data.IdentityModel;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.IdentityModel.Tokens;
 
 namespace UI_Layer.Areas.BackendSystem.Controllers
 {
@@ -86,7 +87,7 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 registerViewModel.UserName = model.CustomerName.Trim();
                 registerViewModel.FullName = model.FullName;
                 registerViewModel.Email = model.Email;
-                registerViewModel.Password = HttGlobalizer.GenerateRandomString(6);
+                registerViewModel.Password = "123@LogIn";/* HttGlobalizer.GenerateRandomString(6);*/
                 registerViewModel.ConfirmPassword = registerViewModel.Password;
                 model.DateOfBirth = new DateTime(model.Year, model.Month, model.Day);
                 model.UserImageStr = $"{Guid.NewGuid().ToString()}{Path.GetExtension(model.UserImage.FileName)}";
@@ -230,10 +231,11 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                     data.Message = _localizer["MI00001"].ToString();
                 }
                 var _list = new List<CustomerDM>();
-                var fromDate = DateTime.ParseExact(viewModel.FilterFromValue, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                var toDate = DateTime.ParseExact(viewModel.FilterToValue, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                var fromDate = (viewModel.FilterFromValue.IsNullOrEmpty() ? DateTime.Now: DateTime.ParseExact(viewModel.FilterFromValue, "dd/MM/yyyy", CultureInfo.InvariantCulture));
+                var toDate = (viewModel.FilterToValue.IsNullOrEmpty() ? DateTime.Now : DateTime.ParseExact(viewModel.FilterToValue, "dd/MM/yyyy", CultureInfo.InvariantCulture));
 
-                if (!string.IsNullOrEmpty(viewModel.FilterKey) )
+
+                if (viewModel.FilterKey != "null")
                 {
                     switch (viewModel.FilterKey)
                     {
@@ -257,7 +259,7 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                             break;
                     }
                 }
-                if (!string.IsNullOrEmpty(viewModel.Filter1Key))
+                if (viewModel.Filter1Key != "null")
                 {
                     if (viewModel.FilterEquation.Equals("Contain"))
                     {
@@ -369,6 +371,7 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 foreach (var item in _list)
                 {
                     CustomerViewModel outputVM = new CustomerViewModel();
+                    outputVM.Id = item.Id.ToString();
                     outputVM.CustomerName = item.ApplicationUser.UserName;
                     outputVM.FullName = item.ApplicationUser.FullName;
                     outputVM.Email = item.ApplicationUser.Email;
@@ -391,12 +394,16 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
 
         public ActionResult CustomerInfoFilterReport(string viewModel)
         {
+            if (viewModel == null)
+            {
+                return View();
+            }
             List<CustomerViewModel> viewModelList = JsonConvert.DeserializeObject<List<CustomerViewModel>>(viewModel);
 
             ViewBag.PrintDate = DateTime.Now.ToString("dd/MM/yyyy");
             ViewBag.List = viewModelList.ToList();
             #region CompanyInformation            
-            var companyInformation = _dbContext.CompanyInformation.Select(s=>s).FirstOrDefault();
+            var companyInformation = _dbContext.CompanyInformation.Select(s => s).FirstOrDefault();
             ViewBag.Company = companyInformation;
             #endregion
             return View();

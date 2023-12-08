@@ -24,8 +24,7 @@
                 $("#txtStreetNumber_Name").val(dataEntity.streetNumber_Name);
                 $("#txtBusinessType").val(dataEntity.businessType);
                 $('#customfile').html(dataEntity.companyLogo_str);
-
-                $('#output').attr('src', 'http://localhost:81/images/' + dataEntity.companyLogo_str);
+                $('#output').attr('src', '/images/' + dataEntity.companyLogo_str);
                 $('#imgfile').val($('#output').val());
                 $("#btnUpdate").show();
                 $("#btnSave").hide();

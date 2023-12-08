@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var max_img_size = 102400;
+$(document).ready(function () {
     $('#txtFromDate').datetimepicker({
         format: 'DD/MM/YYYY'
     });
@@ -10,11 +11,22 @@
     $("#ddFilter").select2({
         placeholder: $("#hide_chooseone").val(),
         allowClear: true
+    }).on('change', function (e) {
+        if (e.target.value === "") {
+            // Code to handle clear event
+            $('#txtFromDate input').val('');
+            $('#txtToDate input').val('');
+        }
     });
     $("#ddFilter1").select2({
         placeholder: $("#hide_chooseone").val(),
         allowClear: true
-    });
+    }).on('change', function (e) {
+        if (e.target.value === "") {
+            // Code to handle clear event
+            $('#txtFilter1').val('');
+        }
+    });;
     $("#ddReportType").select2({
         placeholder: $("#ML00209").val(),
         allowClear: true
@@ -268,25 +280,24 @@ $("input[data-bootstrap-switch]").on('switchChange.bootstrapSwitch', function (e
     } 
 });
 var loadFile = function (event) {
-    debugger;
     console.log("File input changed:", event.target.files);
     if (CheckSpecialCharacters(event.target.files[0].name)) {
         toastr.clear();
-        toastr.error(MV10086);
+        toastr.error(MV00086);
         $("#imgfile")[0].value = "";
         clearImage("output");
         return false;
     }
     else if (CheckImageFileName(event.target.files[0].name)) {
         toastr.clear();
-        toastr.error(MV10087);
+        toastr.error(MV00087);
         $("#imgfile")[0].value = "";
         clearImage("output");
         return false;
     }
     else if (checkImageFileSize(event.target.files[0])) {
         toastr.clear();
-        toastr.error(MV10088 + (max_img_size / 1024) + "KB");
+        toastr.error(MV00088 + (max_img_size / 1024) + "KB");
         $("#imgfile")[0].value = "";
         clearImage("output");
         return false;
@@ -298,7 +309,6 @@ var loadFile = function (event) {
     filePathDiv.innerText = event.target.files[0].name;
 };
 function Add() {
-    debugger;
     var form = $('#addForm')[0];
     $('.submit').attr('disabled', 'disabled');
     var formData = new FormData(form);
@@ -312,7 +322,6 @@ function Add() {
             cache: false,
             timeout: 800000,
             success: function (data, status, xhr) {
-                debugger;
                 if (data.success) {
                     toastr.clear();
                     toastr.success(data.message);
@@ -334,10 +343,21 @@ function clear() {
     $('#Day').val('');
     $('#Month').val('');
     $('#Year').val('');
-    $('#PhoneNumber').val('');
+    $('#PhoneNo').val('');
+    $('#DivisionId').val('');
+    $('#DistrictId').val('');
+    $('#TownshipId').val('');
+    $('#selCustomerTypeId').val('');
     $('#Email').val('');
     $('#Address').val('');
     $('#Remark').val('');
+}
+function cancelClick() {
+    $("#ddFilter").val('').trigger('change'); 
+    $("#ddFilter1").val('').trigger('change');
+    $('#txtFromDate input').val('');
+    $('#txtToDate input').val('');
+    $('#txtFilter1').val('');
 }
 function CustomerInformation(form) {
     var formData = new FormData(form);
@@ -358,19 +378,26 @@ function CustomerInformation(form) {
             timeout: 800000,
             async: false,
             success: function (data, status, xhr) {
-                debugger;
                 if (data.dataList.length > 0) {
-                    window.open('/BackendSystem/Customer/CustomerInfoFilterReport?viewModel=' + JSON.stringify(data.dataList), "_blank");
+                    // Create a new form element
+                    var newForm = document.createElement('form');
+                    newForm.method = 'POST';
+                    newForm.action = '/BackendSystem/Customer/CustomerInfoFilterReport';
+                    newForm.target = '_blank';
 
-                    //if ($("#chkTownship")[0].checked) {
-                    //    window.open('/AdminModule/CustomerInformationReport/CustomerInfoByTownship?fromCustomer=' + $("#selfromCustomer").val() +
-                    //        '&&toCustomer=' + $("#seltoCustomer").val() + '&&fromDate=' + $("#txtFromDate").val() + '&&toDate=' + $("#txtToDate").val(), "_blank");
+                    // Create a hidden input field for the viewModel data
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'viewModel';
+                    input.value = JSON.stringify(data.dataList);
+                    newForm.appendChild(input);
 
-                    //} else {
-                    //    window.open('/AdminModule/CustomerInformationReport/CustomerInfoReport?fromCustomer=' + $("#selfromCustomer").val() +
-                    //        '&&toCustomer=' + $("#seltoCustomer").val() + '&&fromDate=' + $("#txtFromDate").val() + '&&toDate=' + $("#txtToDate").val(), "_blank");
-                    //}
+                    // Append the form to the body and submit it
+                    document.body.appendChild(newForm);
+                    newForm.submit();
+                    document.body.removeChild(newForm);
                 } else {
+                    // Display an alert if there is no data for the report
                     AlertMessage(data.messageStatus, "No Data for Report !!");
                 }
 

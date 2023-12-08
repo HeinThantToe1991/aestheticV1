@@ -545,7 +545,7 @@ $.validator.addMethod("isGreaterThanToday", function (value, element, arg) {
 
 $.validator.addMethod("isGreaterThanToDate", function (value, element, arg) {
     if ($('#ddFilter').val() === null) return true;
-    debugger;
+
     if ($('#txtToDate').data('datetimepicker').date() === null) return true;
     var fromDate = $('#txtFromDate').data('datetimepicker').date();
     var toDate = $('#txtToDate').data('datetimepicker').date();
