@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_AdminLteLayout2.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Areas\BackendSystem\Views\Account\Login.cshtml" />
     <None Include="Areas\BackendSystem\Views\Account\Register.cshtml" />
     <None Include="Areas\BackendSystem\Views\AdminHome\AdminHome.cshtml" />

@@ -1221,4 +1221,7 @@
   <data name="ML00208" xml:space="preserve">
     <value>Birth Year</value>
   </data>
+  <data name="MV00093" xml:space="preserve">
+    <value>Something went wrong. Please try again!</value>
+  </data>
 </root>

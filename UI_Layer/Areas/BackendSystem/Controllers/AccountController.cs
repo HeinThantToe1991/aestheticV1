@@ -41,7 +41,6 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
-            //return RedirectToAction("AdminHome", "AdminHome");
             try
             {
                 ReturnMessageViewModel<string> data = new ReturnMessageViewModel<string>();
@@ -101,9 +100,9 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 else
                 {
                     data.Success = false;
-                    data.Message = _localizer["MI00027"].ToString();
+                    data.Message = _localizer["MV00093"].ToString();
                     data.MessageStatus = MessageStatus.Info;
-                    ModelState.AddModelError(string.Empty, _localizer["MI00027"].ToString());
+                    ModelState.AddModelError(string.Empty, data.Message);
                     return Json(data);
                     //return new JsonResult(data);
                 }

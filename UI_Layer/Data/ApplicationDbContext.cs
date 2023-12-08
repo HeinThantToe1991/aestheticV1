@@ -47,5 +47,6 @@ namespace UI_Layer.Data
         public DbSet<CategoryDM> Category { get; set; }
         public DbSet<ServiceStockDM> ServiceStock { get; set; }
         public DbSet<DoctorDM> Doctor { get; set; }
+        public DbSet<StaffDM> Staff { get; set; }
     }
 }
