@@ -48,5 +48,6 @@ namespace UI_Layer.Data
         public DbSet<ServiceStockDM> ServiceStock { get; set; }
         public DbSet<DoctorDM> Doctor { get; set; }
         public DbSet<StaffDM> Staff { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }

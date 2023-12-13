@@ -6,6 +6,7 @@ using UI_Layer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
+using UI_Layer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,16 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.DefaultRequestCulture = new RequestCulture("my-MM");
     options.SupportedUICultures = supportedCultures;
 });
+
+#region redis
+var redisConfiguration = builder.Configuration.GetSection("Redis").Get<RedisConfiguration>();
+
+// Configure the Redis cache service
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = redisConfiguration.ConnectionString;
+});
+#endregion
 
 var app = builder.Build();
 

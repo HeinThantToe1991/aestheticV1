@@ -19,7 +19,7 @@ using UI_Layer.Areas.BackendSystem.Models;
 using UI_Layer.Globalizer;
 
 
-namespace GeUI_Layer.Globalizer
+namespace UI_Layer.Globalizer
 {
     public class ImageResizeAndCompress 
     {

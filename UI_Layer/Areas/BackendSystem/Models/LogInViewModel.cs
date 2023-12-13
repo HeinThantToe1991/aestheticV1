@@ -9,12 +9,12 @@ namespace UI_Layer.Areas.BackendSystem.Models
 
         [Required(ErrorMessage = "MV00015")]
         [Display(Name = "UserName")]
-        public required string UserName { get; set; }
+        public required string? UserName { get; set; }
 
         [Required(ErrorMessage = "MV00014")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public required string Password { get; set; }
+        public required string? Password { get; set; }
 
     }
 }

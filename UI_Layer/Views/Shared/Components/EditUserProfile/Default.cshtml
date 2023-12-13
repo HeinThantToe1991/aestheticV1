@@ -1,0 +1,353 @@
+﻿@using UI_Layer.Services
+@using Microsoft.AspNetCore.Identity
+@using UI_Layer.Data.IdentityModel
+@inject LanguageService Language
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model UI_Layer.Areas.BackendSystem.Models.CustomerViewModel
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @using (Html.BeginForm("Update", "Account", FormMethod.Post, new { onsubmit = "return UpdateCurrentUser(this)", enctype = "multipart/form-data" }))
+    {
+        <div id="editCurrentUser" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header alert-warning">
+
+                            <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                               @* <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <input type="text" name="Id" id="EditCurrentID" hidden="hidden" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="text" name="UserName" id="EditCurrentUserName" class="form-control" readonly="readonly" required="required" placeholder='@Language.Getkey("ML00185")' />
+                                        <label class="control-label">@Language.Getkey("ML00185")</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="email" name="Email" id="EditCurrentEmail" class="form-control" readonly="readonly" required="required" placeholder="Email" />
+                                        <label class="control-label">@Language.Getkey("ML00141")</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="text" name="FullName" id="EditFullName" class="form-control" required="required" placeholder='@Language.Getkey("ML00194")' />
+                                        <label class="control-label">@Language.Getkey("ML00194")</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="text" name="PhoneNo" id="EditCurrentPhoneNo" class="form-control" required="required" placeholder='@Language.Getkey("ML00012")' />
+                                        <label class="control-label">@Language.Getkey("ML00012")</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label">User Image</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="UserImage" id="EditCurrentimgfile" class="custom-file-input" onchange="EditloadUserProfile(event)" />
+
+                                                <label class="custom-file-label" for="UserImage" id="EditCurrentcustomfile">Choose file</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <a href="" data-toggle="modal" onclick="ShowResetModalCurrentUser()"> Reset Password</a>
+                                    </div>
+                                  
+                                </div>
+                                <div class="col-lg-4">
+                                    <hr />
+                                    <img id="editCurrentUserProfile" width="200" name="ServiceImage" />
+                                    <hr />
+                                    <div class="form-group" style="margin-top: -8px;">
+                                        <select class="form-control form-control-md" style="width: 100%;height:auto" id="Gender" name="Gender">
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>*@
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="row" style="margin-top: 10px;">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <input type="text" name="Id" id="EditCurrentID" hidden="hidden" />
+                                                @Html.TextBoxFor(model => model.CustomerName, new { @id = "EditCurrentUserName", @class = "form-control", @placeholder = @Language.Getkey("ML00013"), @style = "text-transform:uppercase",@readonly="readonly" })
+                                                @Html.LabelFor(model => model.CustomerName, @Language.Getkey("ML00013"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.CustomerName)
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.FullName, new { @id ="EditFullName",@class = "form-control", @placeholder = @Language.Getkey("ML00194"), @style = "text-transform:uppercase" })
+                                                @Html.LabelFor(model => model.FullName, @Language.Getkey("ML00194"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.FullName)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-md" style="width: 100%;height:auto" id="EditCurrentGender" name="Gender">
+                                                    <option value="Female">Female</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="custom-file">
+                                                    @Html.TextBoxFor(model => model.UserImage, new { @class = "custom-file-input", @id = "EditCurrentImage", Type = "file", onchange = "EditloadUserProfile(event)" })
+                                                    @Html.LabelFor(model => model.UserImage, "Choose Image", new { @id = "EditCurrentImageFile", @class = "custom-file-label" })
+                                                    @Html.ValidationMessageFor(model => model.UserImage)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.Day, new { @id = "EditCurrentBirthDay",@class = "form-control", @placeholder = @Language.Getkey("ML00203"), type = "number", min = "1", max = "31" })
+                                                @Html.LabelFor(model => model.Day, @Language.Getkey("ML00206"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.Day)
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.Month, new {@id = "EditCurrentBirthMonth", @class = "form-control", @placeholder = @Language.Getkey("ML00204"), type = "number", min = "1", max = "12" })
+                                                @Html.LabelFor(model => model.Month, @Language.Getkey("ML00207"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.Month)
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.Year, new { @id = "EditCurrentBirthYear",@class = "form-control", @placeholder = @Language.Getkey("ML00205"), type = "number", min = "1900", max = "9999" })
+                                                @Html.LabelFor(model => model.Year, @Language.Getkey("ML00208"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.Year)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.Email, new {@id = "EditCurrentEmail", @class = "form-control", @placeholder = @Language.Getkey("ML00141") })
+                                                @Html.LabelFor(model => model.Email, @Language.Getkey("ML00141"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.Email)
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.PhoneNo, new { @id = "EditCurrentPhoneNo",@class = "form-control", @Type = "tel", @placeholder = @Language.Getkey("ML00012") })
+                                                @Html.LabelFor(model => model.PhoneNo, @Language.Getkey("ML00012"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.PhoneNo)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.DivisionId, new { @id = "EditCurrentDivision",@class = "form-control", @placeholder = @Language.Getkey("ML00049"), @style = "text-transform:uppercase" })
+                                                @Html.LabelFor(model => model.DivisionId, @Language.Getkey("ML00049"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.DivisionId)
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.DistrictId, new { @id = "EditCurrentDistrict",@class = "form-control", @placeholder = @Language.Getkey("ML00050"), @style = "text-transform:uppercase" })
+                                                @Html.LabelFor(model => model.DistrictId, @Language.Getkey("ML00050"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.DistrictId)
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.TownshipId, new { @id = "EditCurrentTownship", @class = "form-control", @placeholder = @Language.Getkey("ML00048"), @style = "text-transform:uppercase" })
+                                                @Html.LabelFor(model => model.TownshipId, @Language.Getkey("ML00048"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.TownshipId)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12" style="margin-bottom: -30px;">
+                                            <div class="form-group">
+                                                @Html.TextAreaFor(model => model.Address, new {@id = "EditCurrentAddress", @class = "form-control", @placeholder = @Language.Getkey("ML00025") })
+                                                @Html.LabelFor(model => model.Address, @Language.Getkey("ML00025"), new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.Address)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group text-center">
+                                                <div class="custom-file">
+                                                    <img id="editCurrentUserProfile" width="100vh" height="130vh" src="/images/atom.PNG" name="UserImage" style="vertical-align: inherit;" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group ">
+                                                <a href="" data-toggle="modal" onclick="ShowResetModalCurrentUser()"> Reset Password</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                   
+         
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning " value=@Language.Getkey("MB00002")>
+                            <input type="button" class="btn btn-secondary " data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    @using (Html.BeginForm("ResetPassword", "Account", FormMethod.Post, new { onsubmit = "return ResetPasswordCurrentUser(this)", enctype = "multipart/form-data" }))
+    {
+        <div id="resetModal" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header alert-warning">
+
+                            <h4 class="modal-title" id="myModalLabel">Reset Password</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-8">
+
+                                    <div class="form-group ">
+                                        <input type="text" name="UserName" id="resetUserName" class="form-control" readonly="readonly" placeholder=@Language.Getkey("ML00185") />
+                                        <label class="control-label">@Language.Getkey("ML00185")</label>
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <input type="text" name="Email" id="resetEmail" class="form-control" readonly="readonly" placeholder=@Language.Getkey("ML00141") />
+                                        <label class="control-label">@Language.Getkey("ML00141")</label>
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <input type="password" name="Password" id="resetPassWord" class="form-control" required="required" placeholder="Password" maxlength="30" />
+                                        <label class="control-label">Password</label>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="password" name="ConfirmPassword" id="resetConfirmPassword" class="form-control" required="required" placeholder="Confirm Password" maxlength="30" />
+                                        <label class="control-label">Confirm Password</label>
+                                    </div>
+
+                                    <input type="text" name="userId" id="resetUserId" hidden />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning " value="Update">
+                            <input type="button" class="btn btn-secondary " data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<script>
+    var EditloadUserProfile = function (event) {
+        var image = document.getElementById('editCurrentUserProfile');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        var filePathDiv = document.getElementById('EditCurrentImageFile');
+        filePathDiv.innerText = event.target.files[0].name;
+    };
+    function EditCurrentUser() {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/BackendSystem/Account/EditCurrentUser",
+            contentType: "application/json;charset=UTF-8",
+            success: function (result) {
+                $('#EditCurrentUserName').val(result.customerName);
+                $("#EditCurrentID").val(result.id);
+                $('#EditCurrentID').hide();
+                $('#EditCurrentGender').val(result.gender).trigger('change');
+                $('#editCurrentUserProfile').attr('src', result.userImageStr);
+                $('#EditCurrentImageFile').text(result.userImageStr.split('/').pop());
+                $('#EditCurrentBirthDay').val(result.day);
+                $('#EditCurrentBirthMonth').val(result.month);
+                $('#EditCurrentBirthYear').val(result.year);
+
+                $('#EditCurrentEmail').val(result.email);
+                $('#EditFullName').val(result.fullName);
+                $('#EditCurrentPhoneNo').val(result.phoneNo);
+                $('#EditCurrentDivision').val(result.divisionId);
+                $('#EditCurrentDistrict').val(result.districtId);
+                $('#EditCurrentTownship').val(result.townshipId);
+                $('#EditCurrentAddress').val(result.address);
+                $('#editCurrentUser').modal('show');
+            },
+            error: function (errormessage) {
+                AlertMessage(1,errormessage.responseText);
+            }
+        });
+        return false;
+    }
+    function ShowResetModalCurrentUser() {
+        var userName = $('#EditCurrentUserName').val();
+        var userId = $('#EditCurrentID').val();
+        $('#resetEmail').val($('#EditCurrentEmail').val());
+        $('#resetUserName').val(userName);
+        $('#resetUserId').val(userId);
+        $('#resetPassWord').val('');
+
+        $('#resetModal').modal('show');
+
+    }
+
+    function ResetPasswordCurrentUser(form) {
+        $('.submit').attr('disabled', 'disabled');
+        $.validator.unobtrusive.parse(form);
+        var formData = new FormData(form);
+        if ($(form).valid()) {
+
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: form.action,
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 800000,
+                success: function (data, status, xhr) {
+                    if (data.success) {
+                        $('#resetModal').modal('hide');
+                        $('#editUser').modal('hide');
+                    }
+                    else {
+                        $('#resetModal').modal('hide');
+                    }
+                    AlertMessage(data.messageStatus, data.message);
+                }
+            });
+        }
+        $('.submit').removeAttr('disabled');
+        return false;
+    }
+</script>

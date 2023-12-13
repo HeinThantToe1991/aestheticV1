@@ -1,0 +1,46 @@
+﻿@using UI_Layer.Services
+@using Microsoft.AspNetCore.Identity
+@using UI_Layer.Data.IdentityModel
+@inject LanguageService Language
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model UI_Layer.Areas.BackendSystem.Models.CustomerViewModel
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var userInfo = await UserManager.GetUserAsync(User);
+
+    <!-- User Dropdown Menu -->
+    <li class="nav-item dropdown user-menu ">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            @*<img src="../../dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">*@
+            <span class="">Hello !  @userInfo.FullName</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right ">
+            <!-- User image -->
+            <li class="user-header bg-primary">
+                <img id="userProfile" class="img-circle elevation-2" style="width:120px;height:120px" name="UserProfile" src="/images/@Model.UserImageStr" />
+                <p>
+                    @userInfo.FullName
+                </p>
+            </li>
+
+            <!-- Menu Footer-->
+            <li class="user-footer">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6" style="width:50%">
+                        <button type="button" onclick="EditCurrentUser()" id="btnEditUser" class="btn btn-outline-info btn-flat">Edit Profile</button>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6" style="width:50%">
+                        <form class="form-inline float-sm-right" asp-area="BackendSystem" asp-controller="Account" asp-action="Logout">
+                            <input type="hidden" name="returnUrl" value="@Url.Action("Login", "Account", new { area = "BackendSystem" })">
+                            <button type="submit" class="btn btn-outline-secondary btn-flat float-right">
+                                <i class="far fa-bell"></i> Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+}

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UI_Layer.Data.IdentityModel;
+using UI_Layer.Helpers;
 
 namespace UI_Layer.Data.SeedData
 {
@@ -27,6 +28,7 @@ namespace UI_Layer.Data.SeedData
                 #region Custom
 
                 SystemUser = true,
+                UserType = Constant.UserType.Staffs,
                 #endregion
 
                 #region Default

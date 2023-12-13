@@ -28,8 +28,12 @@ namespace UI_Layer.Areas.BackendSystem.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        
-        
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        public string UserType { get; set; }
 
     }
 }

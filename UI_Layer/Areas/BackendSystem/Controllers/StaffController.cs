@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.IdentityModel.Tokens;
+using UI_Layer.Helpers;
 
 namespace UI_Layer.Areas.BackendSystem.Controllers
 {
@@ -89,6 +90,8 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 registerViewModel.Email = model.Email;
                 registerViewModel.Password = "123@LogIn";/* HttGlobalizer.GenerateRandomString(6);*/
                 registerViewModel.ConfirmPassword = registerViewModel.Password;
+                registerViewModel.UserType = Constant.UserType.Staffs;
+                registerViewModel.PhoneNumber = model.PhoneNo;
                 model.DateOfBirth = new DateTime(model.Year, model.Month, model.Day);
                 model.UserImageStr = $"{Guid.NewGuid().ToString()}{Path.GetExtension(model.UserImage.FileName)}";
                 model.CreatedUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -187,7 +190,8 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 Active = true,
                 EmailConfirmed = true,
                 CreatedUserId = userid,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                UserType = model.UserType
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)

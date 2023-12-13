@@ -10,6 +10,7 @@ using UI_Layer.Data.AppData;
 using UI_Layer.Data.IdentityModel;
 using UI_Layer.Data;
 using UI_Layer.Globalizer;
+using UI_Layer.Helpers;
 using UI_Layer.Mapper;
 using UI_Layer.Models;
 using UI_Layer.Resources;
@@ -82,6 +83,8 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 registerViewModel.Email = model.Email;
                 registerViewModel.Password = HttGlobalizer.GenerateRandomString(6);
                 registerViewModel.ConfirmPassword = registerViewModel.Password;
+                registerViewModel.UserType = Constant.UserType.Doctors;
+                registerViewModel.PhoneNumber = model.PhoneNo;
                 model.DateOfBirth = new DateTime(model.Year, model.Month, model.Day);
                 model.UserImageStr = $"{Guid.NewGuid().ToString()}{Path.GetExtension(model.UserImage.FileName)}";
                 model.CreatedUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -179,7 +182,8 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                 Active = true,
                 EmailConfirmed = true,
                 CreatedUserId = userid,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                UserType = model.UserType
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)

@@ -8,5 +8,11 @@
             public const string Customer = "Customer";
             public const string User = "Users";
         }
+        public static class UserType
+        {
+            public const string Staffs = "S";
+            public const string Customers = "C";
+            public const string Doctors = "D";
+        }
     }
 }

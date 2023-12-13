@@ -37,5 +37,8 @@ namespace UI_Layer.Data.IdentityModel
         [ScaffoldColumn(false)]
         public bool Active { get; set; }
         public bool SystemUser { get; set; }
+
+        [Column(TypeName = "char(1)")] /*"S = Staff, P or C = Customer, D = Doctor"*/
+        public string UserType { get; set; }
     }
 }
