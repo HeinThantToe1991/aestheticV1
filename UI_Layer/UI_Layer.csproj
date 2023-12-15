@@ -27,6 +27,8 @@
     <None Include="Areas\Identity\Pages\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Identity\Pages\_ViewImports.cshtml" />
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
+    <None Include="wwwroot\lib\microsoft\signalr\dist\browser\signalr.js" />
+    <None Include="wwwroot\lib\microsoft\signalr\dist\browser\signalr.min.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +43,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.13" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.8" />
+    <PackageReference Include="SqlTableDependency" Version="8.5.8" />
     <PackageReference Include="StackExchange.Redis" Version="2.7.4" />
   </ItemGroup>
 

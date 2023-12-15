@@ -43,11 +43,11 @@ namespace UI_Layer.Data
         public DbSet<CompanyInformationDM> CompanyInformation { get; set; }
         public DbSet<CustomerTypeDM> CustomerType { get; set; }
         public DbSet<CustomerDM> Customer { get; set; }
-
         public DbSet<CategoryDM> Category { get; set; }
         public DbSet<ServiceStockDM> ServiceStock { get; set; }
         public DbSet<DoctorDM> Doctor { get; set; }
         public DbSet<StaffDM> Staff { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public virtual DbSet<NotificationsDM> Notifications { get; set; }
     }
 }

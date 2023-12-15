@@ -7,14 +7,18 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using UI_Layer;
+using UI_Layer.Hubs;
+using UI_Layer.NotificationTableDependency;
+using UI_Layer.MiddlewareExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddSignalR();
 // Configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 // Services
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString),
+    ServiceLifetime.Singleton);
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -29,6 +33,9 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 builder.Services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
 builder.Services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
 builder.Services.AddSingleton<LanguageService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<NotificationHub>();
+builder.Services.AddSingleton<NotificationTableDependency>();
 builder.Services.AddLocalization();
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
@@ -70,7 +77,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
-
+app.MapHub<NotificationHub>("/notificationHub");
 #pragma warning disable ASP0014
 app.UseEndpoints(endpoints =>
 {
@@ -95,5 +102,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapRazorPages();
 });
 #pragma warning restore ASP0014
-
+app.UseSqlTableDependency<NotificationTableDependency>(connectionString);
 app.Run();
