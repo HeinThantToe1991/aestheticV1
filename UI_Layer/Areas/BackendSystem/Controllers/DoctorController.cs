@@ -69,7 +69,7 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
         }
         [TypeFilter(typeof(CheckAuthenticationFilter))]
         [HttpPost]
-        public async Task<ActionResult> Add([FromForm] CustomerViewModel model)
+        public async Task<ActionResult> Add([FromForm] DoctorViewModel model)
         {
             ReturnMessageViewModel<ApplicationUser> data = new ReturnMessageViewModel<ApplicationUser>();
             data.MessageStatus = MessageStatus.Success;
@@ -78,10 +78,10 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
             try
             {
                 RegisterViewModel registerViewModel = new RegisterViewModel();
-                registerViewModel.UserName = model.CustomerName.Trim();
+                registerViewModel.UserName = model.LoginName.Trim();
                 registerViewModel.FullName = model.FullName;
                 registerViewModel.Email = model.Email;
-                registerViewModel.Password = HttGlobalizer.GenerateRandomString(6);
+                registerViewModel.Password = "123@LogIn";
                 registerViewModel.ConfirmPassword = registerViewModel.Password;
                 registerViewModel.UserType = Constant.UserType.Doctors;
                 registerViewModel.PhoneNumber = model.PhoneNo;
@@ -120,8 +120,8 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                     model.Id = Guid.NewGuid().ToString();
                     model.Active = true;
                     model.DeleteRemark = string.Empty;
-                    var saveData = CustomerMapper.ViewModelToDataModel(model);
-                    await _dbContext.AddAsync(saveData);
+                    var saveData = DoctorMapper.ViewModelToDataModel(model);
+                    await _dbContext.Doctor.AddAsync(saveData);
                     var transaction = await _dbContext.SaveChangesAsync();
                     if (transaction == 0)
                     {

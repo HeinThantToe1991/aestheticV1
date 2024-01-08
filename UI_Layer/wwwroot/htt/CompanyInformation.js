@@ -29,7 +29,6 @@
                 $("#btnUpdate").show();
                 $("#btnSave").hide();
             } else {
-                debugger;
                 if (response.message == null) {
                     $("#btnSave").show();
                     $("#btnUpdate").hide();
@@ -58,7 +57,7 @@
             },
             CompanyShortName: {
                 required: true,
-                maxlength: 100
+                maxlength: 18
             },
             RefCompanyId: {
                 required: true,
@@ -81,13 +80,13 @@
                 maxlength: 50
             },
             StateDivision: {
-                required: true,
+                required: true
             },
             District: {
-                required: true,
+                required: true
             },
             Township: {
-                required: true,
+                required: true
             },
             CompanyAddress: {
                 required: true,
@@ -105,51 +104,51 @@
         messages: {
             CompanyName: {
                 required: "Please enter CompanyName",
-                maxlength: getValidationMessage(100),
+                maxlength: getValidationMessage(100)
             },
             CompanyShortName: {
                 required: "Please enter CompanyShortName",
-                maxlength: getValidationMessage(100),
+                maxlength: getValidationMessage(18)
             },
             RefCompanyId: {
                 required: "Please enter Company Reference Id",
-                maxlength: getValidationMessage(100),
+                maxlength: getValidationMessage(100)
             },
             //CompanyLogo: {
             //    required: MV00077,
             //},
             PhoneNumber: {
                 required: MV00082,
-                maxlength: getValidationMessage(15),
+                maxlength: getValidationMessage(15)
             },
             Email: {
                 required: MV00083,
-                maxlength: getValidationMessage(254),
+                maxlength: getValidationMessage(254)
             },
             ContactPerson: {
                 required: MV00091,
-                maxlength: getValidationMessage(50),
+                maxlength: getValidationMessage(50)
             },
             StateDivision: {
-                required: "Please enter Division",
+                required: "Please enter Division"
             },
             District: {
-                required: "Please enter District",
+                required: "Please enter District"
             },
             Township: {
-                required: "Please enter Township",
+                required: "Please enter Township"
             },
             CompanyAddress: {
                 required: MV00080,
-                maxlength: getValidationMessage(254),
+                maxlength: getValidationMessage(254)
             },
             WebsiteLink: {
                 //required: "Please enter Facebook Link",
-                maxlength: getValidationMessage(200),
+                maxlength: getValidationMessage(200)
             },
             FacebookLink: {
                 //required: "Please enter Facebook Link",
-                maxlength: getValidationMessage(200),
+                maxlength: getValidationMessage(200)
             }
         },
         errorElement: 'span',

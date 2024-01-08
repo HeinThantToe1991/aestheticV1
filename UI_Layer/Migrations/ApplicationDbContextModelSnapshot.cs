@@ -114,6 +114,47 @@ namespace UI_Layer.Migrations
                     b.ToTable("UserToken", (string)null);
                 });
 
+            modelBuilder.Entity("UI_Layer.Data.AppData.ActiveUserDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ConnectionId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("UserType")
+                        .IsRequired()
+                        .HasColumnType("char(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActiveUsers");
+                });
+
             modelBuilder.Entity("UI_Layer.Data.AppData.CategoryDM", b =>
                 {
                     b.Property<string>("Id")
@@ -178,7 +219,7 @@ namespace UI_Layer.Migrations
 
                     b.Property<string>("CompanyShortName")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(18)");
 
                     b.Property<string>("ContactPerson")
                         .IsRequired()
@@ -360,10 +401,6 @@ namespace UI_Layer.Migrations
                     b.Property<Guid>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
-                        .HasColumnType("char(36)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -405,8 +442,6 @@ namespace UI_Layer.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Doctor");
                 });
@@ -547,6 +582,25 @@ namespace UI_Layer.Migrations
                     b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Staff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3b79e7b8-9a4a-41be-883a-5853056716d8",
+                            Active = true,
+                            Address = "Addresstrue",
+                            ApplicationUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            CreatedDate = new DateTime(2024, 1, 8, 14, 52, 0, 873, DateTimeKind.Local).AddTicks(9127),
+                            CreatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            DateOfBirth = new DateTime(1991, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeleteRemark = "",
+                            Gender = "Male",
+                            Remark = "Default Admin",
+                            SystemDefault = true,
+                            TownshipId = "",
+                            UpdatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            UserImage = ""
+                        });
                 });
 
             modelBuilder.Entity("UI_Layer.Data.IdentityModel.ApplicationRole", b =>
@@ -704,8 +758,8 @@ namespace UI_Layer.Migrations
                             Id = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
                             AccessFailedCount = 0,
                             Active = true,
-                            ConcurrencyStamp = "dd957404-d019-404a-86cb-beaf4259409f",
-                            CreatedDate = new DateTime(2023, 12, 15, 12, 15, 34, 694, DateTimeKind.Local).AddTicks(9634),
+                            ConcurrencyStamp = "6e556090-2299-4768-8605-da339f9f6df9",
+                            CreatedDate = new DateTime(2024, 1, 8, 14, 52, 0, 821, DateTimeKind.Local).AddTicks(9284),
                             CreatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -713,10 +767,10 @@ namespace UI_Layer.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@gmail.com",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKcwFODqY+B7MHEGpn29LsUQAYq1aDDYNQJucPUsIGNfEmElYubWETqrHEIEibA6Pg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIV9OiGWlw0BHO823DyInLTz1gP90MxbLKdSh9kHsVyDm+r/ze2dC3V/8yzGH/1/yw==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1dcbf3e2-0034-4f23-b05b-3df303d5e17e",
+                            SecurityStamp = "870c3068-208c-44e0-ac2b-483b818fc4d2",
                             SystemUser = true,
                             TwoFactorEnabled = false,
                             UpdatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
@@ -810,15 +864,7 @@ namespace UI_Layer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("UI_Layer.Data.AppData.CategoryDM", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("ApplicationUser");
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("UI_Layer.Data.AppData.StaffDM", b =>

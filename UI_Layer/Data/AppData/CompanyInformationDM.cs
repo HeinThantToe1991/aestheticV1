@@ -13,7 +13,7 @@ namespace UI_Layer.Data.AppData
         public string RefCompanyId { get; set; }
         [Column(TypeName = "varchar(100)")]
         public string CompanyName{ get; set; }
-        [Column(TypeName = "varchar(100)")]
+        [Column(TypeName = "varchar(18)")]
         public string CompanyShortName { get; set; }
         [Column(TypeName = "varchar(15)")]
         public string PhoneNumber { get; set; }

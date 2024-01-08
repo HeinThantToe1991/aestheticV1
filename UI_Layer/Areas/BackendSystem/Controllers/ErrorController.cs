@@ -18,5 +18,9 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
         {
             return View();
         }
+        public IActionResult DisconnectedError()
+        {
+            return View();
+        }
     }
 }

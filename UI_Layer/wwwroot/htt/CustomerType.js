@@ -11,7 +11,6 @@ function BindListingTable() {
         url: "/BackendSystem/CustomerType/GetData",
         dataType: "json",
         success: function (response) {
-            debugger;
             $("#listing").DataTable().destroy();
             $("#listing").DataTable({
                 "paging": true,

@@ -60,7 +60,15 @@ builder.Services.AddStackExchangeRedisCache(options =>
 #endregion
 
 var app = builder.Build();
+var lifetime = app.Services.GetRequiredService<IHostApplicationLifetime>();
 
+// Register the OnStopping callback to handle cleanup
+lifetime.ApplicationStopping.Register(() =>
+{
+    // Perform cleanup operations when the application is stopping
+    var notificationHub = app.Services.GetRequiredService<NotificationHub>();
+    notificationHub.ClearActiveUsers();
+});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

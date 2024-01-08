@@ -16,7 +16,7 @@
     }
 }
 function getValidationMessage(maxlength) {
-    validationMessage = '@language.Getkey("MV00084")';
+    validationMessage = MV00084;
     validationMessage = validationMessage.replace("*$*", maxlength);
     return validationMessage;
 }

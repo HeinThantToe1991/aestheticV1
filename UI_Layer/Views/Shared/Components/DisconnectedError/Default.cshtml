@@ -1,0 +1,32 @@
+﻿@using UI_Layer.Services
+@inject LanguageService Language
+<div class="modal fade" id="disconnectedModel" aria-modal="true" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-secondary" style="background-color: #6c757dd6 !important">
+            <div class="modal-header bg-danger">
+                <h4 class="modal-title alert-danger">Disconnected</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="error-page">
+                        <h2 class="headline" style="color: #d08729;">500</h2>
+                        <div class="error-content">
+                            <h3><i class="fas fa-exclamation-triangle text-danger"></i> Oops! Something went wrong.</h3>
+
+                            <p>
+                                We will work on fixing that right away.
+                                <br/>Please check your connection.
+                                <br />Meanwhile, you may <a style="color:#dfff00" href="../../index.html">return to dashboard</a> or try using the search form.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

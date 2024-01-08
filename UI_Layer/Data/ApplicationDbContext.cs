@@ -36,8 +36,10 @@ namespace UI_Layer.Data
             //modelBuilder.Entity<CustomerDM>().ToTable("Customer");
             #region SeedData
             ModelBuilderExtensions.SeedUsers(modelBuilder);
+            ModelBuilderExtensions.SeedStaff(modelBuilder);
             ModelBuilderExtensions.SeedRoles(modelBuilder);
             ModelBuilderExtensions.SeedUserRoles(modelBuilder);
+         
             #endregion
         }
         public DbSet<CompanyInformationDM> CompanyInformation { get; set; }
@@ -49,5 +51,6 @@ namespace UI_Layer.Data
         public DbSet<StaffDM> Staff { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public virtual DbSet<NotificationsDM> Notifications { get; set; }
+        public virtual DbSet<ActiveUserDM> ActiveUsers { get; set; }
     }
 }

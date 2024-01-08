@@ -14,6 +14,8 @@ using UI_Layer.Models;
 using Newtonsoft.Json;
 using UI_Layer.Globalizer;
 using UI_Layer.Helpers;
+using Microsoft.AspNetCore.SignalR;
+using UI_Layer.Hubs;
 
 namespace UI_Layer.Areas.BackendSystem.Controllers
 {
@@ -25,13 +27,17 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
         private readonly IStringLocalizer<Resource> _localizer;
         private readonly ApplicationDbContext _dbContext;
         private readonly IDistributedCache _cache;
-        public AccountController(ApplicationDbContext dbContext,SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, IStringLocalizer<Resource> localizer, IDistributedCache cache)
+        private readonly IHubContext<NotificationHub> _notiHubContext;
+
+        public AccountController(ApplicationDbContext dbContext,SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, IStringLocalizer<Resource> localizer, IDistributedCache cache, IHubContext<NotificationHub> notiHubContext)
         {
             _dbContext = dbContext;
             _signInManager = signInManager;
             _userManager = userManager; 
             _localizer = localizer;
             _cache = cache;
+            _notiHubContext = notiHubContext;
+            
         }
 
         [AllowAnonymous]
@@ -150,7 +156,10 @@ namespace UI_Layer.Areas.BackendSystem.Controllers
                     var jsonInfo = JsonConvert.SerializeObject(logInView);
                     var existingUserJson = await _cache.GetStringAsync("LoggedInUser");
                     if (!existingUserJson.IsNullOrEmpty()) await _cache.RemoveAsync("LoggedInUser");
+                    //context
                     await _cache.SetStringAsync("LoggedInUser", jsonInfo, cacheOptions);
+                    var companyInfo = _dbContext.CompanyInformation.Select(s => s).FirstOrDefault();
+                    await _cache.SetStringAsync("CompanyInfo", JsonConvert.SerializeObject(companyInfo), cacheOptions);
                     var adminHomeUrl = Url.Action("Index", "DashBoard");
                     data.Success = true;
                     data.Message = adminHomeUrl;

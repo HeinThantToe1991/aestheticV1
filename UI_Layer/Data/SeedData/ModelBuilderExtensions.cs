@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Security.Cryptography.X509Certificates;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using UI_Layer.Data.AppData;
 using UI_Layer.Data.IdentityModel;
 using UI_Layer.Helpers;
 
@@ -11,6 +13,7 @@ namespace UI_Layer.Data.SeedData
         public static Guid AdminRole = Guid.Parse("d9cbb087-b31f-4441-8506-c21c7e0c15a4"); //Guid.Parse("");
         public static Guid CustomerRole = Guid.Parse("3b79e7b8-9a4a-41be-883a-5853056716e9");
         public static Guid StaffRole = Guid.Parse("3b79e7b8-9a4a-41be-883a-5853056716d7");
+        public static Guid StaffID = Guid.Parse("3b79e7b8-9a4a-41be-883a-5853056716d8");
         public static void SeedUsers(ModelBuilder builder)
         {
             ApplicationUser user = new ApplicationUser()
@@ -43,6 +46,32 @@ namespace UI_Layer.Data.SeedData
             user.PasswordHash = passwordHasher.HashPassword(user, "123@Ace");
             user.SecurityStamp = Guid.NewGuid().ToString();
             builder.Entity<ApplicationUser>().HasData(user);
+        }
+
+        public static void SeedStaff(ModelBuilder builder)
+        {
+            StaffDM user = new StaffDM()
+            {
+                Id = StaffID,
+                ApplicationUserId = UserID,
+                TownshipId = "",
+                Gender = "Male",
+                Address = "Addresstrue",
+                DateOfBirth = new DateTime(1991, 3, 8),
+                Remark = "Default Admin",
+                DeleteRemark = "",
+                SystemDefault = true,
+                UserImage = "",
+
+                #region Default
+                CreatedUserId = UserID,
+                CreatedDate = DateTime.Now,
+                UpdatedUserId = UserID,
+                Active = true,
+                #endregion
+            };
+         
+            builder.Entity<StaffDM>().HasData(user);
         }
         public static void SeedRoles(ModelBuilder builder)
         {

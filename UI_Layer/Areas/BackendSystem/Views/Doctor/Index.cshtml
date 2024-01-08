@@ -1,6 +1,6 @@
 ﻿@using UI_Layer.Services
 @inject LanguageService Language
-@model UI_Layer.Areas.BackendSystem.Models.CustomerViewModel
+@model UI_Layer.Areas.BackendSystem.Models.DoctorViewModel
 @{
     ViewData["Title"] = "Customer Register";
     Layout = "/Views/Shared/_AdminLteLayout.cshtml";
@@ -174,9 +174,9 @@
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
-                                    @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control", @placeholder = @Language.Getkey("ML00013"), @style = "text-transform:uppercase" })
-                                    @Html.LabelFor(model => model.CustomerName, @Language.Getkey("ML00013"), new { @class = "control-label" })
-                                    @Html.ValidationMessageFor(model => model.CustomerName)
+                                    @Html.TextBoxFor(model => model.LoginName, new { @class = "form-control", @placeholder = @Language.Getkey("ML00013"), @style = "text-transform:uppercase" })
+                                    @Html.LabelFor(model => model.LoginName, @Language.Getkey("ML00013"), new { @class = "control-label" })
+                                    @Html.ValidationMessageFor(model => model.LoginName)
                                 </div>
                             </div>
                             <div class="col-3">
@@ -241,11 +241,11 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="form-group">
+                      @*          <div class="form-group">
                                     <select class="form-control form-control-md" style="width: 100%;height:auto" id="selCustomerTypeId" name="CustomerTypeId">
                                     </select>
-                                    @Html.LabelFor(model => model.CustomerTypeId, @Language.Getkey("ML00057"), new { @class = "control-label" })
-                                </div>
+                                    @Html.LabelFor(model => model.Use, @Language.Getkey("ML00057"), new { @class = "control-label" })
+                                </div>*@
                             </div>
                         </div>
                         <div class="row">

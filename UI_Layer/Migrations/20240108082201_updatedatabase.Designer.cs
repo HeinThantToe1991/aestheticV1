@@ -12,8 +12,8 @@ using UI_Layer.Data;
 namespace UI_Layer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230814090914_add_companyInformation")]
-    partial class add_companyInformation
+    [Migration("20240108082201_updatedatabase")]
+    partial class updatedatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,6 +117,84 @@ namespace UI_Layer.Migrations
                     b.ToTable("UserToken", (string)null);
                 });
 
+            modelBuilder.Entity("UI_Layer.Data.AppData.ActiveUserDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ConnectionId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("UserType")
+                        .IsRequired()
+                        .HasColumnType("char(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActiveUsers");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.CategoryDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
             modelBuilder.Entity("UI_Layer.Data.AppData.CompanyInformationDM", b =>
                 {
                     b.Property<string>("Id")
@@ -144,7 +222,7 @@ namespace UI_Layer.Migrations
 
                     b.Property<string>("CompanyShortName")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(18)");
 
                     b.Property<string>("ContactPerson")
                         .IsRequired()
@@ -204,6 +282,328 @@ namespace UI_Layer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CompanyInformation", (string)null);
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.CustomerDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CustomerTypeId")
+                        .IsRequired()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("DeleteRemark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Remark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TownshipId")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("CustomerTypeId");
+
+                    b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.CustomerTypeDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerType", (string)null);
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.DoctorDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("DeleteRemark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Remark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TownshipId")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Doctor");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.NotificationsDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MessageText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("MessageType")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.ServiceStockDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServiceStock");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.StaffDM", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("DeleteRemark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Remark")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("SystemDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TownshipId")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Staff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3b79e7b8-9a4a-41be-883a-5853056716d8",
+                            Active = true,
+                            Address = "Addresstrue",
+                            ApplicationUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            CreatedDate = new DateTime(2024, 1, 8, 14, 52, 0, 873, DateTimeKind.Local).AddTicks(9127),
+                            CreatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            DateOfBirth = new DateTime(1991, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DeleteRemark = "",
+                            Gender = "Male",
+                            Remark = "Default Admin",
+                            SystemDefault = true,
+                            TownshipId = "",
+                            UpdatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
+                            UserImage = ""
+                        });
                 });
 
             modelBuilder.Entity("UI_Layer.Data.IdentityModel.ApplicationRole", b =>
@@ -337,6 +737,10 @@ namespace UI_Layer.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("UserType")
+                        .IsRequired()
+                        .HasColumnType("char(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedUserId");
@@ -357,8 +761,8 @@ namespace UI_Layer.Migrations
                             Id = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
                             AccessFailedCount = 0,
                             Active = true,
-                            ConcurrencyStamp = "66b95a27-4904-45fd-a3e9-1d12948d8dd3",
-                            CreatedDate = new DateTime(2023, 8, 14, 15, 39, 14, 121, DateTimeKind.Local).AddTicks(4579),
+                            ConcurrencyStamp = "6e556090-2299-4768-8605-da339f9f6df9",
+                            CreatedDate = new DateTime(2024, 1, 8, 14, 52, 0, 821, DateTimeKind.Local).AddTicks(9284),
                             CreatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -366,14 +770,15 @@ namespace UI_Layer.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@gmail.com",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH6Kx25JzCnz3/nkx1l/XOXOWXIrDo9lfIoxUDX3I9mxmMoMIvbx1c/DOiV0h/XsMQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIV9OiGWlw0BHO823DyInLTz1gP90MxbLKdSh9kHsVyDm+r/ze2dC3V/8yzGH/1/yw==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c4890da2-1da0-4dbd-98ed-12b99f9a4740",
+                            SecurityStamp = "870c3068-208c-44e0-ac2b-483b818fc4d2",
                             SystemUser = true,
                             TwoFactorEnabled = false,
                             UpdatedUserId = new Guid("8d7fae5e-3cd5-497b-b334-86790609eedc"),
-                            UserName = "admin"
+                            UserName = "admin",
+                            UserType = "S"
                         });
                 });
 
@@ -433,6 +838,47 @@ namespace UI_Layer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.CustomerDM", b =>
+                {
+                    b.HasOne("UI_Layer.Data.IdentityModel.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UI_Layer.Data.AppData.CustomerTypeDM", "CustomerType")
+                        .WithMany()
+                        .HasForeignKey("CustomerTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("CustomerType");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.DoctorDM", b =>
+                {
+                    b.HasOne("UI_Layer.Data.IdentityModel.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("UI_Layer.Data.AppData.StaffDM", b =>
+                {
+                    b.HasOne("UI_Layer.Data.IdentityModel.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("UI_Layer.Data.IdentityModel.ApplicationUser", b =>
